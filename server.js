@@ -1,10 +1,12 @@
 'use strict';
 
 import express from 'express';
+import logger from "./utils/logger.js";
+import routes from './routes.js'; 
 
 const app = express();
 const port = 3000;
 
-app.get('/', (request, response) => response.send('Welcome to the Playlist app!'));
+app.use("/", routes);
 
-app.listen(port, () => console.log(`Express app running on port ${port}!`));
+app.listen(port, () => logger.info("Your app is listening on port " + port));
