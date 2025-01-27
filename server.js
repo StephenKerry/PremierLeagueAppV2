@@ -7,6 +7,8 @@ import routes from './routes.js';
 const app = express();
 const port = 3000;
 
-app.use("/", routes);
+// app.use("/", routes);
+
+app.get(request, );
 
 app.listen(port, () => logger.info("Your app is listening on port " + port));
