@@ -8,6 +8,8 @@ import { create } from 'express-handlebars';
 const app = express();
 const port = 3000;
 
+app.use(express.static("public"));
+
 const handlebars = create({extname: '.hbs'});
 app.engine(".hbs", handlebars.engine);
 app.set("view engine", ".hbs");
