@@ -3,32 +3,14 @@ import logger from "../utils/logger.js";
 
 const about = {
   createView(request, response) {
-    logger.info("Start page loading!");
+    logger.info("About page loading!");
     
     const viewData = {
-      title: "Welcome to the Playlist app!",
-      info: appStore.getAppInfo()
+      title: "About the Playlist App"
     };
     
-    //logger.debug(viewData);
-    response.render('start', viewData);   
+    response.render('about', viewData);   
   },
 };
 
 export default about;
-
-const start = {
-  createView(request, response) {
-    logger.info("Start page loading!");
-    
-    const viewData = {
-      title: "Welcome to the Playlist app!",
-      info: appStore.getAppInfo()
-    };
-    
-    //logger.debug(viewData);
-    response.render('start', viewData);   
-  },
-};
-
-export default start;
