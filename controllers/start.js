@@ -9,10 +9,12 @@ const start = {
     
     const viewData = {
       title: "Welcome to the Playlist app!",
+      anotherMsg: "Just a test",
       info: appStore.getAppInfo()
     };
     
-    //logger.debug(viewData);
+    logger.debug(viewData.info.message);
+    
     response.render('start', viewData);   
   },
 };
