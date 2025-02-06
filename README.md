@@ -1,4 +1,10 @@
-# readme-only-starter
+# Assignment 1 Starter Project
 
-This Glitch starter project is empty apart from this README.md file! Update this file after you add some contents.
+Use this starter project as the basis for Assignment One
+
+You should: 
+
+- Remix this project
+- Rename the project **wad1-ca1-your-name**
+- Replace your name with your name :) 
 

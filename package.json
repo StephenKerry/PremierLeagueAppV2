@@ -1,7 +1,7 @@
 {
-  "name": "playlist-app",
-  "version": "0.0.1",
-  "description": "A little playlist maker",
+  "name": "ca1-app",
+  "version": "1.0.0",
+  "description": "CA1 app",
   "type": "module",
   "main": "server.js",
   "scripts": {
