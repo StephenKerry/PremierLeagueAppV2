@@ -8,12 +8,9 @@ const start = {
     logger.info("Start page loading!");
     
     const viewData = {
-      title: "Welcome to the Playlist app!",
-      anotherMsg: "Just a test",
+      title: "CA1 Starter App",
       info: appStore.getAppInfo()
     };
-    
-    logger.debug(viewData.info.message);
     
     response.render('start', viewData);   
   },
