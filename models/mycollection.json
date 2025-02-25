@@ -83,15 +83,15 @@
  {     "id": 11,
       "name": "Brighton & Hove Albion",
       "stadium": "Amex Stadium",
-      "manager": "Roberto De Zerbi",
+      "manager": "Fabian Hurzeler",
       "City": "Brighton"
     },
   
    {   "id": 12,
-      "name": "Burnley",
-      "stadium": "Turf Moor",
-      "manager": "Vincent Kompany",
-      "City": "Burnley"
+      "name": "Leicester",
+      "stadium": "King Power Stadium",
+      "manager": "Ruud Van Nistelrooy",
+      "City": "Leicester"
     },
   
   {     "id": 13,
@@ -104,14 +104,14 @@
    {    "id": 14,
       "name": "Crystal Palace",
       "stadium": "Selhurst Park",
-      "manager": "Roy Hodgson",
+      "manager": "Oliver Glasner",
       "city": "London"
     },
   
   {     "id": 15,
       "name": "Everton",
       "stadium": "Goodison Park",
-      "manager": "Sean Dyche",
+      "manager": "David Moyes",
       "City": "Liverool"
     },
   
@@ -123,10 +123,10 @@
     },
   
   {    "id": 17,
-      "name": "Luton Town",
-      "stadium": "Kenilworth Road",
-      "manager": "Rob Edwards",
-      "City": "Luton"
+      "name": "Southampton Fc",
+      "stadium": "St Marys Stadium",
+      "manager": "Ivan Juric",
+      "City": "Southampton"
     },
   
   {     "id": 18,
@@ -137,10 +137,10 @@
     },
   
   {    "id": 19,
-      "name": "Sheffield United",
-      "stadium": "Bramall Lane",
-      "manager": "Chris Wilder",
-      "City": "Sheffield"
+      "name": "Ipswich Town",
+      "stadium": "Portman Road Stadium",
+      "manager": "Kieran Mckenna",
+      "City": "Ipswich"
     },
   
   {    "id": 20,
