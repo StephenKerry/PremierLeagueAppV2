@@ -8,8 +8,8 @@ const dashboard = {
     logger.info("Dashboard page loading!");
     
     const viewData = {
-      title: "Playlist App Dashboard",
-      playlists: teamsCollection.getAllTeams()
+      title: "EPL App Dashboard",
+      teams: teamsCollection.getAllTeams()
     };
     
     logger.debug(viewData.teams);
