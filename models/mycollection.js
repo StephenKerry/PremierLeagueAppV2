@@ -6,7 +6,7 @@ import JsonStore from './json-store.js';
 const teamsCollection = {
 
   store: new JsonStore('./models/mycollection.json', { teamsCollection: [] }),
-  collection: 'teamsCollection',
+  collection: 'teams',
   array: 'teams',
 
   getAllTeams() {

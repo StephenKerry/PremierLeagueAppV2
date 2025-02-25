@@ -1,161 +1,20 @@
-'use strict'; 
+'use strict';
 
-
-
-const teams = [
-  { 
-  "id": 1,
-  "name": "Liverpool FC",
-  "Stadium" : "Anfield", 
-  "manager" : "Arne Slot", 
-  "City" : "Liverpool"
-    
-   }, 
-  
-  { "id": 2,
-    "name": "Arsenal",
-  "Stadium" : "Emirates", 
-  "manager" : "Mikel Arteta", 
-  "City" : "London"
-    
-  },
-  
-  {  "id": 3,
-    "name": "Manchester City",
-  "Stadium" : "Etihad", 
-  "manager" : "Pep Guardiola", 
-  "City" : "Manchester"
-      
-  },
-  
-  { "id": 4,
-    "name": "Manchester United",
-  "Stadium" : "Old Trafford", 
-  "manager" : "Ruben Amorim", 
-  "City" : "Manchester"
-      
-  },
-  
-  {  "id": 5,
-    "name": "Tottenham Hotspur",
-  "Stadium" : "Tottenham Hotspur Stadium", 
-  "manager" : "Ange Postecoglu", 
-  "City" : "London"
-      
-  },
-  
-  
-  {  "id": 6,
-    "name": "West United",
-  "Stadium" : "London Stadium", 
-  "manager" : "Graham Potter", 
-  "City" : "London"
-      
-  }, 
-   
-  {  "id": 7,
-    "name": "NewCastle United",
-  "Stadium" : "St James' Park", 
-  "manager" : "Eddie Howe", 
-  "City" : "NewCastle"
-      
-  },
-  
- {      "id": 8,
-      "name": "Aston Villa",
-      "stadium": "Villa Park",
-      "manager": "Unai Emery",
-      "City" : "Birmingham"
-    },
-  
-  {     "id": 9,
-      "name": "Bournemouth",
-      "stadium": "Vitality Stadium",
-      "manager": "Andoni Iraola",
-      "City": "Bournemouth"
-    },
-  
-  {    "id": 10,
-      "name": "Brentford",
-      "stadium": "Gtech Community Stadium",
-      "manager": "Thomas Frank",
-      "City" : "Brentford"
-    },
-  
- {     "id": 11,
-      "name": "Brighton & Hove Albion",
-      "stadium": "Amex Stadium",
-      "manager": "Roberto De Zerbi",
-      "City": "Brighton"
-    },
-  
-   {   "id": 12,
-      "name": "Burnley",
-      "stadium": "Turf Moor",
-      "manager": "Vincent Kompany",
-      "City": "Burnley"
-    },
-  
-  {     "id": 13,
-      "name": "Chelsea",
-      "stadium": "Stamford Bridge",
-      "manager": "Enzo Maresca",
-      "City": "London"
-    },
-  
-   {    "id": 14,
-      "name": "Crystal Palace",
-      "stadium": "Selhurst Park",
-      "manager": "Roy Hodgson",
-      "city": "London"
-    },
-  
-  {     "id": 15,
-      "name": "Everton",
-      "stadium": "Goodison Park",
-      "manager": "Sean Dyche",
-      "City": "Liverool"
-    },
-  
-  {    "id": 16,
-      "name": "Fulham Fc",
-      "stadium": "Craven Cottage",
-      "manager": "Marco Silva",
-      "City": "Fulham"
-    },
-  
-  {    "id": 17,
-      "name": "Luton Town",
-      "stadium": "Kenilworth Road",
-      "manager": "Rob Edwards",
-      "City": "Luton"
-    },
-  
-  {     "id": 18,
-      "name": "Nottingham Forest",
-      "stadium": "City Ground",
-      "manager": "Nuno Espírito Santo",
-      "City": "Nottingham"
-    },
-  
-  {    "id": 19,
-      "name": "Sheffield United",
-      "stadium": "Bramall Lane",
-      "manager": "Chris Wilder",
-      "City": "Sheffield"
-    },
-  
-  {    "id": 20,
-      "name": "Wolverhampton Wanderers",
-      "stadium": "Molineux Stadium",
-      "manager": "Vítor Pereira",
-      "City": "Wolverhampton"
-    }
-]
+import logger from "../utils/logger.js";
+import teamsCollection from "../models/mycollection.js";
 
 const dashboard = {
   createView(request, response) {
-    response.json(teams);   
+    logger.info("Dashboard page loading!");
+    
+    const viewData = {
+      title: "Playlist App Dashboard",
+      playlists: teamsCollection.getAllTeams()
+    };
+    
+    logger.debug(viewData.teams);
+    
+    response.render('dashboard', viewData);
   },
 };
 
