@@ -20,12 +20,54 @@
   
   {
     "name": "Manchester City",
-  "Stadium" : "Emirates", 
-  "manager" : "Mikel Arteta", 
+  "Stadium" : "Etihad", 
+  "manager" : "Pep Guardiola", 
+  "City" : "Manchester"
+      
+  },
+  
+  {
+    "name": "Manchester United",
+  "Stadium" : "Old Trafford", 
+  "manager" : "Ruben Amorim", 
+  "City" : "Manchester"
+      
+  },
+  
+  {
+    "name": "Tottenham Hotspur",
+  "Stadium" : "Tottenham Hotspur Stadium", 
+  "manager" : "Ange Postecoglu", 
   "City" : "London"
       
-    
-  }
+  },
+  
+  {
+    "name": "West Ham United",
+  "Stadium" : "London Stadium", 
+  "manager" : "Graham Potter", 
+  "City" : "London"
+      
+  }, 
+  
+  {
+    "name": "West United",
+  "Stadium" : "London Stadium", 
+  "manager" : "Graham Potter", 
+  "City" : "London"
+      
+  }, 
+   
+  {
+    "name": "NewCastle United",
+  "Stadium" : "St James' Park", 
+  "manager" : "Eddie Howe", 
+  "City" : "London"
+      
+  },
+  
+  
+  
   
   
 ]
