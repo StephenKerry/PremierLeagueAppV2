@@ -62,12 +62,80 @@
     "name": "NewCastle United",
   "Stadium" : "St James' Park", 
   "manager" : "Eddie Howe", 
+  "City" : "NewCastle"
+      
+  },
+  
+  {
+    "name": "West United",
+  "Stadium" : "London Stadium", 
+  "manager" : "Graham Potter", 
   "City" : "London"
       
   },
   
+ {
+      "name": "Aston Villa",
+      "stadium": "Villa Park",
+      "manager": "Unai Emery",
+      "City" : "Birmingham"
+    },
   
+  {
+      "name": "Bournemouth",
+      "stadium": "Vitality Stadium",
+      "manager": "Andoni Iraola",
+      "City": "Bournemouth"
+    },
   
+  {
+      "name": "Brentford",
+      "stadium": "Gtech Community Stadium",
+      "manager": "Thomas Frank",
+      "City" : "Brentford"
+    },
+  
+ {
+      "name": "Brighton & Hove Albion",
+      "stadium": "Amex Stadium",
+      "manager": "Roberto De Zerbi",
+      "City": "Brighton"
+    },
+  
+   {
+      "name": "Burnley",
+      "stadium": "Turf Moor",
+      "manager": "Vincent Kompany",
+      "City": "Burnley"
+    },
+  
+  {
+      "name": "Chelsea",
+      "stadium": "Stamford Bridge",
+      "manager": "Enzo Maresca",
+      "City": "London"
+    },
+  
+   {
+      "name": "Crystal Palace",
+      "stadium": "Selhurst Park",
+      "manager": "Roy Hodgson",
+      "city": "London"
+    },
+  
+  {
+      "name": "Everton",
+      "stadium": "Goodison Park",
+      "manager": "Sean Dyche",
+      "City": "Liverool"
+    },
+  
+  {
+      "name": "Fulham",
+      "stadium": "Craven Cottage",
+      "manager": "Marco Silva",
+      "CI
+    },
   
   
 ]
