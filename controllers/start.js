@@ -1,7 +1,7 @@
 'use strict';
 
 import logger from "../utils/logger.js";
-import appStore from "../models/app-store.js";
+import teamsCollection from "../models/mycollection.js";
 
 const start = {
   createView(request, response) {
@@ -9,7 +9,7 @@ const start = {
     
     const viewData = {
       title: "CA1 Starter App",
-      info: appStore.getAppInfo()
+      info: teamsCollection.getAllTeams()
     };
     
     response.render('start', viewData);   
