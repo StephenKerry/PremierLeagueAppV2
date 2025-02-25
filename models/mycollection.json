@@ -1,0 +1,31 @@
+{ 
+
+"teams":  [
+  { 
+  
+  "name": "Liverpool FC",
+  "Stadium" : "Anfield", 
+  "manager" : "Arne Slot", 
+  "City" : "Liverpool"
+    
+   }, 
+  
+  { 
+    "name": "Arsenal",
+  "Stadium" : "Emirates", 
+  "manager" : "Mikel Arteta", 
+  "City" : "London"
+    
+  },
+  
+  {
+    "name": "Manchester City",
+  "Stadium" : "Emirates", 
+  "manager" : "Mikel Arteta", 
+  "City" : "London"
+      
+    
+  }
+  
+  
+]
