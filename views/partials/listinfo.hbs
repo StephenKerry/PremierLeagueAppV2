@@ -1,26 +1,28 @@
-<table class="ui fixed striped table">
-  <thead>
-    <tr>
-      <th>Team</th>
-      <th>Manager</th>
-      <th>Stadium</th>
-      <th>City</th>
-      <th>More Info</th> 
-    </tr>
-  </thead>
-  <tbody>
-    {{#each teams.teams}}
+{{#if teams.teams}}
+
+  <table class="ui fixed striped table">
+    <thead>
       <tr>
-        <td>{{name}}</td>
-        <td>{{manager}}</td>
-        <td>{{stadium}}</td>
-        <td>{{city}}</td>
-        <td>
-          <a href="/team/{{id}}" class="ui icon button">
-            <i class="fas fa-futbol"></i> 
-          </a>
-        </td>
+        <th>Team</th>
+        <th>Manager</th>
+        <th>Stadium</th>
+        <th>City</th>
       </tr>
-    {{/each}}
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      {{#each teams.teams}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{manager}}</td>
+          <td>{{stadium}}</td> 
+          <td>{{City}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+{{else}}
+  <h3 class="ui message">
+    No teams available!
+  </h3>
+{{/if}}
