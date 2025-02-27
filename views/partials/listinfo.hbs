@@ -1,29 +1,26 @@
-{{#if singlePlaylist.songs}}
-
-  <table class="ui fixed striped table">
-    <thead>
+<table class="ui fixed striped table">
+  <thead>
+    <tr>
+      <th>Team</th>
+      <th>Manager</th>
+      <th>Stadium</th>
+      <th>City</th>
+      <th>More Info</th> 
+    </tr>
+  </thead>
+  <tbody>
+    {{#each teams.teams}}
       <tr>
-        <th>Song</th>
-        <th>Artist</th>
+        <td>{{name}}</td>
+        <td>{{manager}}</td>
+        <td>{{stadium}}</td>
+        <td>{{city}}</td>
+        <td>
+          <a href="/team/{{id}}" class="ui icon button">
+            <i class="fas fa-futbol"></i> 
+          </a>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-      {{#each singlePlaylist.songs}}
-        <tr>
-          <td>
-            {{title}}
-          </td>
-          <td>
-            {{artist}}
-          </td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
-
-  {{else}}
-    <h3 class="ui message">
-      Empty playlist!
-    </h3>
-
-{{/if}}
+    {{/each}}
+  </tbody>
+</table>
