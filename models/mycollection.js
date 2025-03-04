@@ -4,9 +4,9 @@ import logger from '../utils/logger.js';
 import JsonStore from './json-store.js';
 
 const teamsCollection = {
-  store: new JsonStore('./models/mycollection.json', { teamsCollection: [] }),
+  store: new JsonStore('./models/mycollection.json', { teams: [] }),
   collection: 'teams',
-  array: 'teams',
+
 
   
   getAllTeams() {
@@ -15,7 +15,7 @@ const teamsCollection = {
 
   
   getInfo(id) {
-    return this.store.findOneBy(this.collection, (teams) => teams.id === id);
+    return this.store.findOneBy(this.collection, (teams => teams.id === id));
   }
 };
 

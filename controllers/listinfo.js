@@ -13,7 +13,7 @@ const listinfo = {
       title: "Team Infomation Details" ,
        singleTeam: teamsCollection.getInfo(teamsId)
     };
-    
+    logger.info(viewData.singleTeam)
     response.render('listinfo', viewData);
   },
 };
