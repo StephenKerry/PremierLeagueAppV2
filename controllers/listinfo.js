@@ -1,15 +1,17 @@
 'use strict';
 
 import logger from "../utils/logger.js"; 
-import playlistStore from '../models/playlist-store.js';
+import teamsCollection from '../models/mycollection.js';
 
 const listinfo = {
   createView(request, response) {
-    logger.info("Info page loading!");
+    logger.info("Info page loading!"); 
+    const teamsId = request.params.id;
+    logger.debug('Teams id = ' + teamsId);
     
     const viewData = {
       title: "Team Infomation Details" ,
-       singleTeam: mycollection.getAllTeams(teamsId)
+       singleTeam: teamsCollection.getInfo(teamsId)
     };
     
     response.render('listinfo', viewData);
