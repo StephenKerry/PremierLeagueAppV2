@@ -1,4 +1,33 @@
-<h1>{{team.name}} - Information on Team</h1>
-<p>Manager: {{teams.manager}}</p>
-<p>Stadium: {{teams.Stadium}}</p>
-<p>City: {{teams.1.city}}</p>
+{{#if singleTeam.info}}
+
+  <table class="ui fixed striped table">
+    <thead>
+      <tr>
+        <th>Stadium</th>
+        <th>Manager</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each singleTeam.info}}
+        <tr>
+          <td>
+            {{Stadium}}
+          </td>
+          <td>
+            {{manager}}
+          </td>
+          <td>
+            {{City}}
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  {{else}}
+    <h3 class="ui message">
+      Empty Team Info!
+    </h3>
+
+{{/if}}
