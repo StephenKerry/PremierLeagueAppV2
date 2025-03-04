@@ -15,7 +15,7 @@ const teamsCollection = {
 
   
   getInfo(id) {
-    return this.store.findOneBy(this.collection, (teams => teams.id === id));
+    return this.store.findOneBy(this.collection, (teams => teams.id == id));
   }
 };
 

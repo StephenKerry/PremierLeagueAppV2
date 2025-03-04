@@ -12,7 +12,8 @@
    }, 
   
   { "id": 2,
-    "name": "Arsenal",
+    "name": "Arsenal", 
+    "image" 
   "Stadium" : "Emirates", 
   "manager" : "Mikel Arteta", 
   "City" : "London"
@@ -21,6 +22,7 @@
   
   {  "id": 3,
     "name": "Manchester City",
+    "image" 
   "Stadium" : "Etihad", 
   "manager" : "Pep Guardiola", 
   "City" : "Manchester"
@@ -37,6 +39,7 @@
   
   {  "id": 5,
     "name": "Tottenham Hotspur",
+    "image" 
   "Stadium" : "Tottenham Hotspur Stadium", 
   "manager" : "Ange Postecoglu", 
   "City" : "London"

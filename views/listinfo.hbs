@@ -1,5 +1,7 @@
-{{#if singleTeam.info}}
+{{> menu}}
 
+{{#if singleTeam}}
+{{#with singleTeam}}
   <table class="ui fixed striped table">
     <thead>
       <tr>
@@ -9,7 +11,6 @@
       </tr>
     </thead>
     <tbody>
-      {{#each singleTeam.info}}
         <tr>
           <td>
             {{Stadium}}
@@ -21,10 +22,10 @@
             {{City}}
           </td>
         </tr>
-      {{/each}}
+    
     </tbody>
   </table>
-
+  {{/with}}
   {{else}}
     <h3 class="ui message">
       Empty Team Info!
