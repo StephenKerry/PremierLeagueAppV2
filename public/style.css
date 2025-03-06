@@ -13,6 +13,23 @@ body {
   background-color: lightgrey;
 }
 
-header {
+nav {
+  background-color: #f4f4f4; /* Or leave as default, depending on your preference */
+}
+
+#dashboard {
   background-color: purple;
+  color: white; /* Make sure the text is readable */
+}
+
+#dashboard:hover {
+  background-color: darkviolet; /* Darker color on hover */
+} 
+#about {
+  background-color: purple;
+  color: white; /* Make sure the text is readable */
+}
+
+#about:hover {
+  background-color: darkviolet; /* Darker color on hover */
 }
