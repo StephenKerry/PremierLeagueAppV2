@@ -11,7 +11,8 @@ const listinfo = {
     
     const viewData = {
       title: "Team Infomation Details" ,
-       singleTeam: teamsCollection.getInfo(teamsId)
+       singleTeam: teamsCollection.getInfo(teamsId), 
+      teamImage: "https://example.com/default-team-image.jpg" 
     };
     logger.info(viewData.singleTeam)
     response.render('listinfo', viewData);
