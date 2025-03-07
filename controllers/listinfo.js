@@ -12,7 +12,7 @@ const listinfo = {
     const viewData = {
       title: "Team Infomation Details" ,
        singleTeam: teamsCollection.getInfo(teamsId), 
-      teamImage: "https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/slot-anfield.jpg?v=1741352294964"
+      
     };
     logger.info(viewData.singleTeam)
     response.render('listinfo', viewData);
