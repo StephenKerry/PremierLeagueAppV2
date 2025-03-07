@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   font-size: 16px;
+  background-color: purple;
 }
 
 *, *:before, *:after {
@@ -10,7 +11,7 @@ html {
 body {
   font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
   margin: 2em;
-  background-color: lightgrey;
+  background-color: lightblue;
 }
 
 nav {
