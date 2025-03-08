@@ -101,7 +101,7 @@
       "Stadium": "Gtech Community Stadium",
       "manager": "Thomas Frank",
       "City" : "Brentford",
-   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/thomas%20frank.jpg?v=1741458305561
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/thomas%20frank.jpg?v=1741458305561"
     },
   
  {     "id": 11,
@@ -110,7 +110,7 @@
       "Stadium": "Amex Stadium",
       "manager": "Fabian Hurzeler",
       "City": "Brighton",
-  "manager-image":"
+  "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/fabian.jpg?v=1741458386856"
     },
   
    {   "id": 12,
@@ -119,7 +119,7 @@
       "Stadium": "King Power Stadium",
       "manager": "Ruud Van Nistelrooy",
       "City": "Leicester",
-    "manager-image":"
+    "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/ruud.jpg?v=1741458454408"
     },
   
   {     "id": 13,
@@ -128,7 +128,7 @@
       "Stadium": "Stamford Bridge",
       "manager": "Enzo Maresca",
       "City": "London",
-   "manager-image":"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/enzo.jpg?v=1741458526852"
     },
   
    {    "id": 14,
@@ -137,7 +137,7 @@
       "Stadium": "Selhurst Park",
       "manager": "Oliver Glasner",
       "city": "London",
-    "manager-image":"
+    "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/glasner--scaled.jpg.webp?v=1741458637667"
     },
   
   {     "id": 15,
@@ -146,7 +146,7 @@
       "Stadium": "Goodison Park",
       "manager": "David Moyes",
       "City": "Liverool",
-   "manager-image":"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/moyes.jpg?v=1741458707318"
     },
   
   {    "id": 16,
@@ -155,7 +155,7 @@
       "Stadium": "Craven Cottage",
       "manager": "Marco Silva",
       "City": "Fulham",
-   "manager-image":"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/marco.jpg?v=1741458792684"
     },
   
   {    "id": 17,
@@ -164,7 +164,7 @@
       "Stadium": "St Marys Stadium",
       "manager": "Ivan Juric",
       "City": "Southampton",
-   "manager-image":"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/juric.jpg?v=1741458847598"
     },
   
   {     "id": 18,
@@ -173,7 +173,7 @@
       "Stadium": "City Ground",
       "manager": "Nuno Espírito Santo",
       "City": "Nottingham",
-   "manager-image":"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/nuno.jpg?v=1741458903330"
     },
   
   {    "id": 19,
@@ -182,7 +182,7 @@
       "Stadium": "Portman Road Stadium",
       "manager": "Kieran Mckenna",
       "City": "Ipswich",
-   "manager-image":"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/kieran.jpg?v=1741458976479"
     },
   
   {    "id": 20,
