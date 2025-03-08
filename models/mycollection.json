@@ -7,7 +7,8 @@
   "image" : "https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/liverpool.jpg?v=1740599263849",
   "Stadium" : "Anfield", 
   "manager" : "Arne Slot", 
-  "City" : "Liverpool"
+  "City" : "Liverpool",
+    "manager-image": "https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/slot-anfield.jpg?v=1741352294964"
     
     
    }, 
@@ -17,7 +18,8 @@
     "image": "https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/arsenal.webp?v=1740600158853",
   "Stadium" : "Emirates", 
   "manager" : "Mikel Arteta", 
-  "City" : "London"
+  "City" : "London",
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/arteta.jpg?v=1741457480346"
     
   },
   
@@ -26,7 +28,10 @@
     "image": "https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/Manchester_City_FC_badge.svg.webp?v=1740600235216",
   "Stadium" : "Etihad", 
   "manager" : "Pep Guardiola", 
-  "City" : "Manchester"
+  "City" : "Manchester", 
+   "manager-image":"
+   
+   
       
   },
   
@@ -35,7 +40,8 @@
     "image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/Manchester_United_FC_crest.svg.webp?v=1740600297433",
   "Stadium" : "Old Trafford", 
   "manager" : "Ruben Amorim", 
-  "City" : "Manchester"
+  "City" : "Manchester",
+   "manager-image":"
       
   },
   
@@ -54,7 +60,8 @@
    "image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/west%20ham.png?v=1740600441304",
   "Stadium" : "London Stadium", 
   "manager" : "Graham Potter", 
-  "City" : "London"
+  "City" : "London",
+   "manager-image":"
       
   }, 
    
@@ -63,7 +70,8 @@
    "image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/Newcastle_United_Logo.svg.webp?v=1740600589337",
   "Stadium" : "St James' Park", 
   "manager" : "Eddie Howe", 
-  "City" : "NewCastle"
+  "City" : "NewCastle",
+   "manager-image":"
       
   },
   
@@ -72,7 +80,8 @@
   "image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/download.jpg?v=1740600639110",
       "Stadium": "Villa Park",
       "manager": "Unai Emery",
-      "City" : "Birmingham"
+      "City" : "Birmingham",
+  "manager-image":"
     },
   
   {     "id": 9,
@@ -80,7 +89,8 @@
    "image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/bournemouth.jpg?v=1740600643681",
       "Stadium": "Vitality Stadium",
       "manager": "Andoni Iraola",
-      "City": "Bournemouth"
+      "City": "Bournemouth",
+   "manager-image":"
     },
   
   {    "id": 10,
@@ -88,7 +98,8 @@
    "image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/brentford.png?v=1740600646728",
       "Stadium": "Gtech Community Stadium",
       "manager": "Thomas Frank",
-      "City" : "Brentford"
+      "City" : "Brentford",
+   "manager-image":"
     },
   
  {     "id": 11,
@@ -96,7 +107,8 @@
   "image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/brighton.png?v=1740600655063",
       "Stadium": "Amex Stadium",
       "manager": "Fabian Hurzeler",
-      "City": "Brighton"
+      "City": "Brighton",
+  "manager-image":"
     },
   
    {   "id": 12,
