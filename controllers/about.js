@@ -6,7 +6,7 @@ const about = {
   createView(request, response) {
     logger.info("About page loading!");
 
-    
+     // Data  passed through the 'about' view 
     const viewData = {
       title: "Premier League App About",
       info: {
@@ -26,5 +26,5 @@ const about = {
     response.render('about', viewData);
   },
 };
-
+// here i am Exporting the 'about' controller so it can be used in other parts of the app
 export default about;
