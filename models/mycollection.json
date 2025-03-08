@@ -63,7 +63,7 @@
   "Stadium" : "London Stadium", 
   "manager" : "Graham Potter", 
   "City" : "London",
-   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/ange.jpg?v=1741457864022"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/graham.jpg?v=1741457961220"
       
   }, 
    
@@ -191,6 +191,6 @@
       "Stadium": "Molineux Stadium",
       "manager": "Vítor Pereira",
       "City": "Wolverhampton",
-   "manager-image":"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/vitor.jpg?v=1741459024964"
     }
 ]}
