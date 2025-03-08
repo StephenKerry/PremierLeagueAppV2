@@ -1,7 +1,7 @@
 'use strict';
 
 import logger from "../utils/logger.js";
-import teamsCollection from "../models/mycollection.js";
+import teamsCollection from "../models/mycollection.js"; //here i am importing the teams collection model
 
 const dashboard = {
   createView(request, response) {
@@ -9,7 +9,7 @@ const dashboard = {
     
     const viewData = {
       title: "EPL App Dashboard",
-      teams: teamsCollection.getAllTeams()
+      teams: teamsCollection.getAllTeams() // here i fetch all teams from the collectiom
     };
     
     logger.debug(viewData.teams);
