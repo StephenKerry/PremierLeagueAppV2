@@ -36,8 +36,8 @@ nav {
 } 
 
 .manager-image {
-  width: 300px;
-  height: 200px;
+  width: 1200px;
+  height: 450px;
   object-fit: cover;
   border-radius: 10px; /* Optional: adds rounded corners */
 }
