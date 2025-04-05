@@ -1,6 +1,6 @@
-# Assignment 1 Starter Project
+# Assignment   Project
 
-Use this starter project as the basis for Assignment One
+This is an assignment on a premier league app i have created 
 
 You should: 
 

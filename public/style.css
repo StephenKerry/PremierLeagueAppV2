@@ -29,6 +29,10 @@ nav {
 #about {
   background-color: purple;
   color: white; 
+} 
+#search {
+  background-color: purple;
+  color: white; 
 }
 
 #about:hover {
