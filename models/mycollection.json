@@ -110,7 +110,11 @@
       "Stadium": "Villa Park",
       "manager": "Unai Emery",
       "City" : "Birmingham",
-  "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/unai.jpg?v=1741458140494"
+  "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/unai.jpg?v=1741458140494", 
+  "players": [
+    "Marcus Rashford",
+    "Ollie Watkins"
+  ]
     },
   
   {     "id": 9,
@@ -119,7 +123,11 @@
       "Stadium": "Vitality Stadium",
       "manager": "Andoni Iraola",
       "City": "Bournemouth",
-   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/iraiola.jpg?v=1741458207728"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/iraiola.jpg?v=1741458207728", 
+   "players": [
+    "Justin Kluivert",
+    "Dean Huijsen"
+  ]
     },
   
   {    "id": 10,
@@ -128,7 +136,11 @@
       "Stadium": "Gtech Community Stadium",
       "manager": "Thomas Frank",
       "City" : "Brentford",
-   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/thomas%20frank.jpg?v=1741458305561"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/thomas%20frank.jpg?v=1741458305561", 
+   "players": [
+    "Bryan Mbeuno",
+    "Mikel Damsgaard"
+  ]
     },
   
  {     "id": 11,
@@ -137,7 +149,11 @@
       "Stadium": "Amex Stadium",
       "manager": "Fabian Hurzeler",
       "City": "Brighton",
-  "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/fabian.jpg?v=1741458386856"
+  "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/fabian.jpg?v=1741458386856", 
+  "players": [
+    "Evan Ferguson",
+    "Danny Welbeck"
+  ]
     },
   
    {   "id": 12,
@@ -146,7 +162,11 @@
       "Stadium": "King Power Stadium",
       "manager": "Ruud Van Nistelrooy",
       "City": "Leicester",
-    "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/ruud.jpg?v=1741458454408"
+    "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/ruud.jpg?v=1741458454408", 
+    "players": [
+    "Jamie Vardy",
+    "Abdul Fatawu"
+  ]
     },
   
   {     "id": 13,
@@ -155,7 +175,11 @@
       "Stadium": "Stamford Bridge",
       "manager": "Enzo Maresca",
       "City": "London",
-   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/enzo.jpg?v=1741458526852"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/enzo.jpg?v=1741458526852", 
+   "players": [
+    "Cole Palmer",
+    "Jadon Sancho"
+  ]
     },
   
    {    "id": 14,
@@ -164,7 +188,11 @@
       "Stadium": "Selhurst Park",
       "manager": "Oliver Glasner",
       "city": "London",
-    "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/glasner--scaled.jpg.webp?v=1741458637667"
+    "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/glasner--scaled.jpg.webp?v=1741458637667" ,
+    "players": [
+    "Eberechi Eze",
+    "Daniel Munoz"
+  ]
     },
   
   {     "id": 15,
@@ -173,7 +201,11 @@
       "Stadium": "Goodison Park",
       "manager": "David Moyes",
       "City": "Liverool",
-   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/moyes.jpg?v=1741458707318"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/moyes.jpg?v=1741458707318" ,
+   "players": [
+    "Beto",
+    "Carlos Alcaraz"
+  ]
     },
   
   {    "id": 16,
@@ -182,7 +214,11 @@
       "Stadium": "Craven Cottage",
       "manager": "Marco Silva",
       "City": "Fulham",
-   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/marco.jpg?v=1741458792684"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/marco.jpg?v=1741458792684", 
+   "players": [
+    "Andreas Pereira",
+    "Adama Traore"
+  ]
     },
   
   {    "id": 17,
@@ -191,7 +227,11 @@
       "Stadium": "St Marys Stadium",
       "manager": "Ivan Juric",
       "City": "Southampton",
-   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/juric.jpg?v=1741458847598"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/juric.jpg?v=1741458847598",
+   "players": [
+    "Tyler Dibling",
+    "Aaron Ramsdale"
+  ]
     },
   
   {     "id": 18,
@@ -200,7 +240,11 @@
       "Stadium": "City Ground",
       "manager": "Nuno Espírito Santo",
       "City": "Nottingham",
-   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/nuno.jpg?v=1741458903330"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/nuno.jpg?v=1741458903330", 
+   "players": [
+    "Antony Elanga",
+    "Ola Aina"
+  ]
     },
   
   {    "id": 19,
@@ -209,7 +253,11 @@
       "Stadium": "Portman Road Stadium",
       "manager": "Kieran Mckenna",
       "City": "Ipswich",
-   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/kieran.jpg?v=1741458976479"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/kieran.jpg?v=1741458976479", 
+   "players": [
+    "Liam Delap",
+    "Kalvin Philips"
+  ]
     },
   
   {    "id": 20,
@@ -218,6 +266,10 @@
       "Stadium": "Molineux Stadium",
       "manager": "Vítor Pereira",
       "City": "Wolverhampton",
-   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/vitor.jpg?v=1741459024964"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/vitor.jpg?v=1741459024964", 
+   "players": [
+    "Matheus Chuna",
+    "Jao"
+  ]
     }
 ]}
