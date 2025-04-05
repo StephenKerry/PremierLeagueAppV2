@@ -3,40 +3,45 @@
 import logger from "../utils/logger.js";
 import teamsCollection from "../models/mycollection.js";
 
-const getCategories = () => {
-  const categories = [];
+
+const getManagers = () => {
+  const managers = [];
   const teams = teamsCollection.getAllTeams();
-  teams.forEach(element => {
-    if (!categories.includes(element.category)) {
-      categories.push(element.category);
+  teams.forEach(team => {
+    if (!managers.includes(team.manager)) {
+      managers.push(team.manager);
     }
   });
-  return categories;
-}
+  return managers;
+};
+
 
 const search = {
   createView(request, response) {
-    logger.info("Search page loading!");  
-  
-    
-    
-	findResult(request, response) {
-    const category = request.body.category;
-    logger.debug('Team category = ' + category);
+    logger.info("Search page loading!");
 
     const viewData = {
-      title: 'Playlist',
-      foundPlaylists: playlistStore.getPlaylistCategory(category),
-      categories: getCategories(),
-      categoryTitle: category
+      title: "Search Teams",
+      managers: getManagers()
     };
-    
-    logger.debug(viewData.foundPlaylists);
-    
-    response.render('search', viewData);
-},
 
-  
+    response.render('search', viewData);
+  },
+
+  findResult(request, response) {
+    const manager = request.body.manager;
+    logger.debug('Team manager = ' + manager);
+
+    const viewData = {
+      title: 'Search Results',
+      foundPlaylists: teamsCollection.getTeamManager(manager),
+      managers: getManagers(),
+      managerName: manager
+    };
+
+    logger.debug(viewData.foundPlaylists);
+    response.render('search', viewData);
+  }
 };
 
 export default search;

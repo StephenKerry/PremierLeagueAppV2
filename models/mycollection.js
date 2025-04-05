@@ -16,7 +16,15 @@ const teamsCollection = {
   
   getInfo(id) {
     return this.store.findOneBy(this.collection, (teams => teams.id == id));
-  }
+  }, 
+  
+  getTeamManager(manager, userid) {
+    return this.store.findBy(
+      this.collection,
+      (team => team.manager.toLowerCase() === manager.toLowerCase() && 
+	   team.userid === userid)
+      );
+},
 };
 
 
