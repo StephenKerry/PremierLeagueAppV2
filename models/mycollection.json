@@ -8,8 +8,11 @@
   "Stadium" : "Anfield", 
   "manager" : "Arne Slot", 
   "City" : "Liverpool",
-    "manager-image": "https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/slot-anfield.jpg?v=1741352294964"
-    
+    "manager-image": "https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/slot-anfield.jpg?v=1741352294964",
+    "players": [
+    "Mohamed Salah",
+    "Virgil van Dijk"
+  ]
     
     
    }, 
@@ -20,8 +23,11 @@
   "Stadium" : "Emirates", 
   "manager" : "Mikel Arteta", 
   "City" : "London",
-   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/arteta.jpg?v=1741457480346"
-    
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/arteta.jpg?v=1741457480346",
+    "players": [
+    "Bukayo Saka",
+    "William Saliba"
+  ]
   },
   
   {  "id": 3,
@@ -30,7 +36,11 @@
   "Stadium" : "Etihad", 
   "manager" : "Pep Guardiola", 
   "City" : "Manchester", 
-   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/pep.jpg?v=1741457588484"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/pep.jpg?v=1741457588484",
+   "players": [
+    "Erling Haaland",
+    "Ruben Dias"
+  ]
    
    
       
@@ -42,7 +52,11 @@
   "Stadium" : "Old Trafford", 
   "manager" : "Ruben Amorim", 
   "City" : "Manchester",
-   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/ruben.jpg?v=1741457788130"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/ruben.jpg?v=1741457788130", 
+   "players": [
+    "Bruno Fernandes",
+    "Leny Yoro"
+  ]
       
   },
   
@@ -52,7 +66,11 @@
   "Stadium" : "Tottenham Hotspur Stadium", 
   "manager" : "Ange Postecoglu", 
   "City" : "London",
-   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/ange.jpg?v=1741457864022"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/ange.jpg?v=1741457864022", 
+   "players": [
+    "Dominic Solanke",
+    "Archie Gray"
+  ]
    
       
   },
@@ -64,7 +82,11 @@
   "Stadium" : "London Stadium", 
   "manager" : "Graham Potter", 
   "City" : "London",
-   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/graham.jpg?v=1741457961220"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/graham.jpg?v=1741457961220", 
+   "players": [
+    "Jarrod Bowen",
+    "Michal Antonio"
+  ]
       
   }, 
    
@@ -74,7 +96,11 @@
   "Stadium" : "St James' Park", 
   "manager" : "Eddie Howe", 
   "City" : "NewCastle",
-   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/eddie.jpg?v=1741458048497"
+   "manager-image":"https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/eddie.jpg?v=1741458048497", 
+   "players": [
+    "Alexander Isak",
+    "Anthony Gordon"
+  ]
       
   },
   
