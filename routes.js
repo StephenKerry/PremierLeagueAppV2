@@ -16,7 +16,9 @@ router.get('/search', search.createView);
 router.get('/', start.createView);
 router.get('/dashboard', dashboard.createView); 
 router.get('/about', about.createView); 
-router.get('/team/:id', listinfo.createView);  
+router.get('/team/:id', listinfo.createView); 
+router.post('/searchCategory', search.findResult);
+
 
 
 router.get('/error', (request, response) => response.status(404).end('Page not found.'));

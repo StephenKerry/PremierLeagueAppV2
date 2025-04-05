@@ -11,5 +11,13 @@
       {{/each}}
     </select>
   </div>
-</form>
+  </form>
+  
+  {{> results}}
+  
 </section>
+
+<script>
+    const dropdown = document.querySelector("#myDropdown");
+    dropdown.addEventListener("change", () => document.querySelector("form").submit());
+</script>

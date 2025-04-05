@@ -16,17 +16,26 @@ const getCategories = () => {
 
 const search = {
   createView(request, response) {
-    logger.info("Search page loading!");
-	
+    logger.info("Search page loading!");  
+  
+    
+    
+	findResult(request, response) {
+    const category = request.body.category;
+    logger.debug('Team category = ' + category);
+
     const viewData = {
-      title: "EPL App Search",
-      categories: getCategories()
+      title: 'Playlist',
+      foundPlaylists: playlistStore.getPlaylistCategory(category),
+      categories: getCategories(),
+      categoryTitle: category
     };
     
-    logger.debug(viewData.categories);
+    logger.debug(viewData.foundPlaylists);
     
     response.render('search', viewData);
-  },
+},
+
   
 };
 

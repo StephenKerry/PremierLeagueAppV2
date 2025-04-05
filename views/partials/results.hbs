@@ -1,25 +1,25 @@
   <section id="searchResults">
-    {{#if foundPlaylists}}
+    {{#if foundTeams}}
       <h2>
           {{categoryTitle}}
       </h2>
     {{/if}}
 
-    {{#each foundPlaylists}}
+    {{#each foundTeams}}
       <section class="ui left aligned middle aligned segment">
 
         <h3 class="ui header">
-            {{title}}
+            {{name}}
         </h3>
 
         <p>
-          <i class="music icon"></i>
-            {{#if songs}}
-              Total songs:
-              {{songs.length}}
+          <i class="user plus icon"></i>
+            {{#if players}}
+              Total players:
+              {{players.length}}
 
               {{else}}
-              Empty playlist!
+              Empty Team!
             {{/if}}
         </p>
         
