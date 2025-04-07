@@ -34,12 +34,12 @@ const search = {
 
     const viewData = {
       title: 'Search Results',
-      foundPlaylists: teamsCollection.getTeamManager(manager),
+      foundManagers: teamsCollection.getTeamManager(manager),
       managers: getManagers(),
       managerName: manager
     };
 
-    logger.debug(viewData.foundPlaylists);
+    logger.debug(viewData.foundManagers);
     response.render('search', viewData);
   }
 };
