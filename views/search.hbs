@@ -3,10 +3,10 @@
 <section class="ui left aligned middle aligned segment">
   <form class="ui stacked segment form" action = "/searchCategory" method = "POST">
   <div class="field">
-    <label>Category</label>
-    <select name = "category" id = "myDropdown">
+    <label>Select a manager</label>
+    <select name = "manager" id = "myDropdown">
       <option>Please select One</option>
-      {{#each categories}}
+      {{#each managers}}
         <option value = "{{this}}">{{this}}</option>
       {{/each}}
     </select>
