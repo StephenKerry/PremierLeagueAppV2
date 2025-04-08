@@ -18,6 +18,8 @@ router.get('/dashboard', dashboard.createView);
 router.get('/about', about.createView); 
 router.get('/team/:id', listinfo.createView); 
 router.post('/searchCategory', search.findResult);
+router.post('/dashboard/addteam', dashboard.addTeam);
+
 
 
 

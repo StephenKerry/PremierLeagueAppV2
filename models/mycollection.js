@@ -11,7 +11,12 @@ const teamsCollection = {
   
   getAllTeams() {
     return this.store.findAll(this.collection);
-  },
+  }, 
+  
+  addTeam(team) {
+    this.store.addCollection(this.collection, team);
+},
+
 
   
   getInfo(id) {
