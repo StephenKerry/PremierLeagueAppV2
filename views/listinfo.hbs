@@ -1,40 +1,30 @@
 {{> menu}}
 
 {{#if singleTeam}}
-{{#with singleTeam}}
-  <table class="ui fixed striped table">
-    <thead>
-      <tr>
-        <th>Stadium</th>
-        <th>Manager</th>
-        <th>City</th>
-      </tr>
-    </thead>
-    <tbody>
+  {{#with singleTeam}}
+    <table class="ui fixed striped table">
+      <thead>
         <tr>
-          <td>
-            {{Stadium}}
-          </td>
-          <td>
-            {{manager}}
-          </td>
-          <td>
-            {{City}}
-          </td>
+          <th>Stadium</th>
+          <th>Manager</th>
+          <th>City</th>
+          <th>Players</th>
         </tr>
-    
-    </tbody>
-  </table> 
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{Stadium}}</td>
+          <td>{{manager}}</td>
+          <td>{{City}}</td>
+          <td>{{players}}</td>
+        </tr>
+      </tbody>
+    </table> 
 
-    
-  <img src="{{manager-image}}" alt="Team Image" class="ui image manager-image">
-
-
-
+    <img src="{{manager-image}}" alt="Team Image" class="ui image manager-image">
   {{/with}}
-  {{else}}
-    <h3 class="ui message">
-      Empty Team Info!
-    </h3>
-
+{{else}}
+  <h3 class="ui message">
+    Empty Team Info!
+  </h3>
 {{/if}}

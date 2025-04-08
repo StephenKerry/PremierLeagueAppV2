@@ -2,6 +2,8 @@
 
 import logger from "../utils/logger.js";
 import teamsCollection from "../models/mycollection.js"; //here i am importing the teams collection model
+import { v4 as uuidv4 } from 'uuid';
+
 
 const dashboard = {
   createView(request, response) {
