@@ -18,14 +18,17 @@ const dashboard = {
     response.render('dashboard', viewData);
   },
 
-  
   addTeam(request, response) {
-    const newTeam = {
-      id: uuidv4(),
-      title: request.body.title,
-      manager: request.body.manager,
-      players: [],
-    };
+  const newTeam = {
+    id: uuidv4(),
+    name: request.body.name,
+    manager: request.body.manager,
+    image: request.body.image, // team icon
+    "manager-image": request.body["manager-image"], // detailed page image
+    Stadium: "Unknown",
+    City: "Unknown",
+    players: []
+  };
 
     teamsCollection.addTeam(newTeam);
     response.redirect('/dashboard');
