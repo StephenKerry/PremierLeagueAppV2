@@ -23,11 +23,11 @@ const dashboard = {
     id: uuidv4(),
     name: request.body.name,
     manager: request.body.manager,
-    image: request.body.image, // team icon
-    "manager-image": request.body["manager-image"], // detailed page image
-    Stadium: "Unknown",
-    City: "Unknown",
-    players: []
+    image: request.body.image,
+    "manager-image": request.body["manager-image"],
+    City: request.body.City,
+    Stadium: request.body.Stadium,
+    players: request.body.players.split(",").map(p => p.trim())
   };
 
     teamsCollection.addTeam(newTeam);
