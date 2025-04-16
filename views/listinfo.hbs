@@ -14,9 +14,39 @@
       <tbody>
         <tr>
           <td>{{Stadium}}</td>
-          <td>{{manager}}</td>
+          <td>
+            {{manager}}
+            <a href="/team/{{id}}/deletemanager" title="Delete manager">
+              <i class="ui red trash icon"></i>
+            </a>
+          </td>
           <td>{{City}}</td>
-          <td>{{players}}</td>
+          <td>
+            {{#if players}}
+              <table class="ui unstackable striped table">
+                <thead>
+                  <tr>
+                    <th>Players</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each players}}
+                    <tr>
+                      <td>{{this}}</td>
+                      <td class="center aligned">
+                        <a href="/team/{{../id}}/deleteplayer/{{@index}}" title="Delete player">
+                          <i class="ui black trash icon"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+            {{else}}
+              <p>No players added!</p>
+            {{/if}}
+          </td>
         </tr>
       </tbody>
     </table> 

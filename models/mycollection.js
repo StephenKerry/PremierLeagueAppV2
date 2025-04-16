@@ -15,6 +15,10 @@ const teamsCollection = {
   
   addTeam(team) {
     this.store.addCollection(this.collection, team);
+}, 
+  
+  removePlayer(id, playerIndex) {
+    this.store.removeItem(this.collection, id, this.array, songId);
 },
 
 
