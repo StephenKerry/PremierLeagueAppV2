@@ -19,6 +19,10 @@ array: 'players',
   
   removePlayer(teamId, playerIndex) {
   this.store.removeItem(this.collection, teamId, 'players', playerIndex);
+}, 
+   removeTeam(id) {
+    const team = this.getTeam(id);
+    this.store.removeCollection(this.collection, team);
 },
 
 
@@ -26,7 +30,6 @@ array: 'players',
   const team = this.getInfo(teamId);
   if (team) {
     team.manager = '';
-    this.store.save();
   }
 },
 

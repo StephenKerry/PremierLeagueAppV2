@@ -32,7 +32,16 @@ const dashboard = {
 
     teamsCollection.addTeam(newTeam);
     response.redirect('/dashboard');
-  }
-};
+  }, 
+  
+  deleteTeam(request, response) {
+    const teamId = request.params.id;
+    logger.debug(`Deleting Team ${teamId}`);
+    teamsCollection.removeTeam(teamId);
+    response.redirect("/dashboard");
+},
+
+}; 
+
 
 export default dashboard;
