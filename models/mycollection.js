@@ -17,16 +17,37 @@ array: 'players',
     this.store.addCollection(this.collection, team);
 }, 
   
-  removePlayer(teamId, playerIndex) {
-  this.store.removeItem(this.collection, teamId, 'players', playerIndex);
-}, 
+ removePlayer(teamId, playerIndex) {
+  const team = this.store.findOneBy(this.collection, (t) => t.id == teamId); // loose equality okay if ID type varies
+
+  if (team && Array.isArray(team.players) && playerIndex >= 0 && playerIndex < team.players.length) {
+    team.players.splice(playerIndex, 1);
+    // or await this.store.write() if using async
+  }
+},
+
    removeTeam(id) {
     const team = this.getInfo(id);
     this.store.removeCollection(this.collection, team);
 },
-  addPlayer(teamId, playerName) {
-  this.store.addItem(this.collection, teamId, 'players', playerName);
+ addPlayer(teamId, playerName) {
+  const team = this.store.findOneBy(this.collection, (team) => team.id == teamId);
+
+  if (team) {
+    // ✅ Ensure players array exists
+    if (!Array.isArray(team.players)) {
+      team.players = [];
+    }
+
+    // 🧹 Clean input and add it
+    const cleanName = playerName.trim();
+    if (cleanName.length > 0) {
+      team.players.push(cleanName);
+      
+    }
+  }
 },
+
 
 
 

@@ -20,11 +20,15 @@ const listinfo = {
   
   deletePlayer(request, response) {
   const teamId = request.params.id;
-  const playerIndex = request.params.index;
+  const playerIndex = parseInt(request.params.index, 10); // Parse index to ensure it's a number
+
   logger.debug(`Deleting Player at index ${playerIndex} from Team ${teamId}`);
+  
   teamsCollection.removePlayer(teamId, playerIndex);
+
   response.redirect('/team/' + teamId);
 },
+
   addPlayer(request, response) {
   const teamId = request.params.id;
   const newPlayer = request.body.player;
