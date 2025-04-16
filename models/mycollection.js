@@ -6,7 +6,7 @@ import JsonStore from './json-store.js';
 const teamsCollection = {
   store: new JsonStore('./models/mycollection.json', { teams: [] }),
   collection: 'teams',
-
+array: 'players',
 
   
   getAllTeams() {
@@ -23,10 +23,10 @@ const teamsCollection = {
 
 
   removeManager(teamId) {
-  const team = this.getTeam(teamId);
+  const team = this.getInfo(teamId);
   if (team) {
     team.manager = '';
-    this.save();
+    this.store.save();
   }
 },
 
