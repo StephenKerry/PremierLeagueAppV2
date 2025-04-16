@@ -65,13 +65,16 @@ array: 'players',
     return this.store.findOneBy(this.collection, (teams => teams.id == id));
   }, 
   
-  getTeamManager(manager, userid) {
-    return this.store.findBy(
-      this.collection,
-      (team => team.manager.toLowerCase() === manager.toLowerCase() && 
-	   team.userid === userid)
-      );
-},
+ getTeamManager(manager, city = null) {
+  return this.getAllTeams().filter(team => {
+    const matchesManager = team.manager === manager;
+    const matchesCity = city
+      ? team.City && team.City.toLowerCase().includes(city.toLowerCase())
+      : true;
+    return matchesManager && matchesCity;
+  });
+}
+
 };
 
 

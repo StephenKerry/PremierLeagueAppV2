@@ -1,23 +1,29 @@
 {{> menu id="search"}}
 
 <section class="ui left aligned middle aligned segment">
-  <form class="ui stacked segment form" action = "/searchCategory" method = "POST">
-  <div class="field">
-    <label>Select a manager</label>
-    <select name = "manager" id = "myDropdown">
-      <option>Please select One</option>
-      {{#each managers}}
-        <option value = "{{this}}">{{this}}</option>
-      {{/each}}
-    </select>
-  </div>
+  <form class="ui stacked segment form" action="/searchCategory" method="POST">
+    <div class="two fields">
+      <div class="field">
+        <label>Select a manager</label>
+        <select name="manager" id="myDropdown">
+          <option disabled selected>Please select one</option>
+          {{#each managers}}
+            <option value="{{name}}" {{#if selected}}selected{{/if}}>{{name}}</option>
+          {{/each}}
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Or search by city (optional)</label>
+        <input type="text" name="city" placeholder="Enter city name" />
+      </div>
+    </div>
   </form>
-  
+
   {{> results}}
-  
 </section>
 
 <script>
-    const dropdown = document.querySelector("#myDropdown");
-    dropdown.addEventListener("change", () => document.querySelector("form").submit());
+  const dropdown = document.querySelector("#myDropdown");
+  dropdown.addEventListener("change", () => document.querySelector("form").submit());
 </script>

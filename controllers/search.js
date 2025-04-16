@@ -15,14 +15,17 @@ const getManagers = () => {
   return managers;
 };
 
-
 const search = {
   createView(request, response) {
-    logger.info("Search page loading!");
+    const managers = getManagers().map(name => ({
+      name,
+      selected: false
+    }));
 
     const viewData = {
       title: "Search Teams",
-      managers: getManagers()
+      managers,
+      foundManagers: []
     };
 
     response.render('search', viewData);
@@ -30,16 +33,18 @@ const search = {
 
   findResult(request, response) {
     const manager = request.body.manager;
-    logger.debug('Team manager = ' + manager);
+    const managers = getManagers().map(name => ({
+      name,
+      selected: name === manager
+    }));
 
     const viewData = {
       title: 'Search Results',
+      managers,
       foundManagers: teamsCollection.getTeamManager(manager),
-      managers: getManagers(),
       managerName: manager
     };
 
-    logger.debug(viewData.foundManagers);
     response.render('search', viewData);
   }
 };
