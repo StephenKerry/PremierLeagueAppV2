@@ -21,7 +21,7 @@ array: 'players',
   this.store.removeItem(this.collection, teamId, 'players', playerIndex);
 }, 
    removeTeam(id) {
-    const team = this.getTeam(id);
+    const team = this.getInfo(id);
     this.store.removeCollection(this.collection, team);
 },
 
