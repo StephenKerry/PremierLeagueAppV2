@@ -28,6 +28,7 @@ const listinfo = {
   addPlayer(request, response) {
   const teamId = request.params.id;
   const newPlayer = request.body.player;
+    
   logger.debug(`Adding player "${newPlayer}" to team ${teamId}`);
   teamsCollection.addPlayer(teamId, newPlayer);
   response.redirect('/team/' + teamId);
