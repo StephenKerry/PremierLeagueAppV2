@@ -65,15 +65,12 @@ array: 'players',
     return this.store.findOneBy(this.collection, (teams => teams.id == id));
   }, 
   
- getTeamManager(manager, city = null) {
-  return this.getAllTeams().filter(team => {
-    const matchesManager = team.manager === manager;
-    const matchesCity = city
-      ? team.City && team.City.toLowerCase().includes(city.toLowerCase())
-      : true;
-    return matchesManager && matchesCity;
-  });
+// In your teamsCollection model
+getTeamManager(managerName) {
+  const teams = this.getAllTeams();
+  return teams.filter(team => team.manager === managerName);  // Filter teams by manager
 }
+
 
 };
 

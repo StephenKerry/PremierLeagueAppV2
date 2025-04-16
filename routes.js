@@ -23,6 +23,8 @@ router.post('/team/:id/addplayer', listinfo.addPlayer);
 router.get('/dashboard/deleteteam/:id', dashboard.deleteTeam);
 router.post('/searchCategory', search.findResult);
 router.post('/dashboard/addteam', dashboard.addTeam);
+router.get('/search', search.createView);  // Show the search page
+router.post('/search', search.findResult);  // Handle form submission and show search results
 
 
 

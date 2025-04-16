@@ -3,7 +3,7 @@
 import logger from "../utils/logger.js";
 import teamsCollection from "../models/mycollection.js";
 
-
+// Get the list of managers
 const getManagers = () => {
   const managers = [];
   const teams = teamsCollection.getAllTeams();
@@ -16,36 +16,37 @@ const getManagers = () => {
 };
 
 const search = {
+  // Render the search page with a dropdown for managers
   createView(request, response) {
-    const managers = getManagers().map(name => ({
-      name,
-      selected: false
-    }));
+    logger.info("Search page loading!");
 
     const viewData = {
-      title: "Search Teams",
-      managers,
-      foundManagers: []
+      title: "Team Search",
+      managers: getManagers(),  // Fetch the list of managers
+      foundTeams: []  // No results to show initially
     };
 
-    response.render('search', viewData);
+    response.render('search', viewData);  // Render the search page
   },
 
+  // Handle the form submission and search for teams by manager
   findResult(request, response) {
     const manager = request.body.manager;
-    const managers = getManagers().map(name => ({
-      name,
-      selected: name === manager
-    }));
+    logger.debug('Manager selected = ' + manager);
+
+    // Filter the teams by the selected manager
+    const foundTeams = teamsCollection.getTeamManager(manager);  // Get teams managed by the selected manager
 
     const viewData = {
       title: 'Search Results',
-      managers,
-      foundManagers: teamsCollection.getTeamManager(manager),
-      managerName: manager
+      foundTeams,  // Show the found teams
+      managers: getManagers(),  // Fetch the list of managers for the dropdown
+      managerName: manager  // Show the selected manager
     };
 
-    response.render('search', viewData);
+    logger.debug(viewData.foundTeams);  // Log the found teams for debugging
+
+    response.render('search', viewData);  // Render the search results
   }
 };
 
