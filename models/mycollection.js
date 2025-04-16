@@ -17,9 +17,19 @@ const teamsCollection = {
     this.store.addCollection(this.collection, team);
 }, 
   
-  removePlayer(id, playerIndex) {
-    this.store.removeItem(this.collection, id, this.array, songId);
+  removePlayer(teamId, playerIndex) {
+  this.store.removeItem(this.collection, teamId, 'players', playerIndex);
 },
+
+
+  removeManager(teamId) {
+  const team = this.getTeam(teamId);
+  if (team) {
+    team.manager = '';
+    this.save();
+  }
+},
+
 
 
   
