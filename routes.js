@@ -19,6 +19,7 @@ router.get('/about', about.createView);
 router.get('/team/:id', listinfo.createView);  
 router.get('/team/:id/deleteplayer/:index', listinfo.deletePlayer);
 router.get('/team/:id/deletemanager', listinfo.deleteManager);
+router.post('/team/:id/addplayer', listinfo.addPlayer);
 router.get('/dashboard/deleteteam/:id', dashboard.deleteTeam);
 router.post('/searchCategory', search.findResult);
 router.post('/dashboard/addteam', dashboard.addTeam);

@@ -1,60 +1,46 @@
-{{> menu}}
+{{> menu id="listinfo"}}
 
-{{#if singleTeam}}
-  {{#with singleTeam}}
-    <table class="ui fixed striped table">
+<section class="ui segment">
+  <h2 class="ui header">Team: {{singleTeam.name}}</h2>
+  <h3>Manager: {{singleTeam.manager}}</h3>
+  {{#if singleTeam.manager}}
+    <a href="/team/{{singleTeam.id}}/deletemanager" class="ui red button">
+      Delete Manager
+    </a>
+  {{/if}}
+
+  <h3 class="ui dividing header">Players</h3>
+  {{#if singleTeam.players.length}}
+    <table class="ui striped table">
       <thead>
         <tr>
-          <th>Stadium</th>
-          <th>Manager</th>
-          <th>City</th>
-          <th>Players</th>
+          <th>Player Name</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>{{Stadium}}</td>
-          <td>
-            {{manager}}
-            <a href="/team/{{id}}/deletemanager" title="Delete manager">
-              <i class="ui red trash icon"></i>
-            </a>
-          </td>
-          <td>{{City}}</td>
-          <td>
-            {{#if players}}
-              <table class="ui unstackable striped table">
-                <thead>
-                  <tr>
-                    <th>Players</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {{#each players}}
-                    <tr>
-                      <td>{{this}}</td>
-                      <td class="center aligned">
-                        <a href="/team/{{../id}}/deleteplayer/{{@index}}" title="Delete player">
-                          <i class="ui black trash icon"></i>
-                        </a>
-                      </td>
-                    </tr>
-                  {{/each}}
-                </tbody>
-              </table>
-            {{else}}
-              <p>No players added!</p>
-            {{/if}}
-          </td>
-        </tr>
+        {{#each singleTeam.players}}
+          <tr>
+            <td>{{this}}</td>
+            <td>
+              <a href="/team/{{../singleTeam.id}}/deleteplayer/{{@index}}">
+                <i class="ui trash icon"></i>
+              </a>
+            </td>
+          </tr>
+        {{/each}}
       </tbody>
-    </table> 
+    </table>
+  {{else}}
+    <p>No players added yet.</p>
+  {{/if}}
 
-    <img src="{{manager-image}}" alt="Team Image" class="ui image manager-image">
-  {{/with}}
-{{else}}
-  <h3 class="ui message">
-    Empty Team Info!
-  </h3>
-{{/if}}
+  <h4 class="ui dividing header">Add New Player</h4>
+  <form class="ui form" action="/team/{{singleTeam.id}}/addplayer" method="POST">
+    <div class="field">
+      <label>Player Name</label>
+      <input type="text" name="player" placeholder="Enter player name" required>
+    </div>
+    <button class="ui primary button" type="submit">Add Player</button>
+  </form>
+</section>

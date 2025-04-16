@@ -24,6 +24,10 @@ array: 'players',
     const team = this.getInfo(id);
     this.store.removeCollection(this.collection, team);
 },
+  addPlayer(teamId, playerName) {
+  this.store.addItem(this.collection, teamId, 'players', playerName);
+},
+
 
 
   removeManager(teamId) {
