@@ -23,9 +23,9 @@
           <tr>
             <td>{{this}}</td>
             <td>
-              <a href="/team/{{../singleTeam.id}}/deleteplayer/{{@index}}">
-                <i class="ui trash icon"></i>
-              </a>
+              <a href="/team/{{../id}}/deleteplayer/{{@index}}" title="Delete player">
+  <i class="ui black trash icon"></i>
+</a>
             </td>
           </tr>
         {{/each}}
@@ -35,12 +35,5 @@
     <p>No players added yet.</p>
   {{/if}}
 
-  <h4 class="ui dividing header">Add New Player</h4>
-  <form class="ui form" action="/team/{{singleTeam.id}}/addplayer" method="POST">
-    <div class="field">
-      <label>Player Name</label>
-      <input type="text" name="player" placeholder="Enter player name" required>
-    </div>
-    <button class="ui primary button" type="submit">Add Player</button>
-  </form>
+  
 </section>
