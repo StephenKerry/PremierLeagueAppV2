@@ -25,7 +25,7 @@ const accounts = {
   
   //logout function to render logout page
   logout(request, response) {
-    response.cookie('team', '');
+    response.cookie('teams', '');
     response.redirect('/');
   },
   
