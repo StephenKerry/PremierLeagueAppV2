@@ -16,6 +16,20 @@ array: 'players',
     return this.store.findAll(this.collection);
   }, 
   
+  getAllPlayers() {
+  const teams = this.getAllTeams(); // get all teams
+  let allPlayers = [];
+
+  for (const team of teams) {
+    if (Array.isArray(team.players)) {
+      allPlayers = allPlayers.concat(team.players); // merge all players from each team
+    }
+  }
+
+  return allPlayers;
+},
+
+  
   addTeam(team) {
     this.store.addCollection(this.collection, team);
 }, 

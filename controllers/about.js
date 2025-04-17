@@ -13,39 +13,38 @@ const about = {
       const userTeams = teamsCollection.getUserTeam(loggedInUser.id);
 
       let numTeams = 20 + userTeams.length;
-      let numPlayers = 0;
+      let numPlayers = 40;
       let average = 0;
 
+      // Only track user-created team player counts
+      let numbers = [];
+
       for (let item of userTeams) {
-        numPlayers += item.players.length;
+        const count = item.players.length;
+        numPlayers += count;
+        numbers.push(count);
       }
 
       if (numTeams > 0) {
         average = (numPlayers / numTeams).toFixed(1);
-      } else {
-        average = 0;
       }
 
-      let numbers = [];
-      for (let item of userTeams) {
-        numbers.push(item.players.length);
-      }
+      let max = 0;
+      let min = 0;
+      let maxtitle = [];
+      let smalltitle = [];
 
-      const max = Math.max(...numbers);
-      const maxtitle = [];
+      if (numbers.length > 0) {
+        max = Math.max(...numbers);
+        min = Math.min(...numbers);
 
-      for (let item of userTeams) {
-        if (item.players.length === max) {
-          maxtitle.push(item.name);
-        }
-      }
-
-      const smallest = Math.min(...numbers);
-      const smalltitle = [];
-
-      for (let item of userTeams) {
-        if (item.players.length === smallest) {
-          smalltitle.push(item.name);
+        for (let item of userTeams) {
+          if (item.players.length === max) {
+            maxtitle.push(item.name);
+          }
+          if (item.players.length === min) {
+            smalltitle.push(item.name);
+          }
         }
       }
 
@@ -57,7 +56,7 @@ const about = {
         displayNumPlayers: numPlayers,
         displayAverage: average,
         displayLargest: max,
-        displaySmallest: smallest,
+        displaySmallest: min,
         displaySmallestTitle: smalltitle,
         displayLargestTitle: maxtitle,
         info: {
