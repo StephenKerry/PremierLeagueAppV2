@@ -34,12 +34,11 @@ array: 'players',
     this.store.addCollection(this.collection, team);
 }, 
   
- removePlayer(teamId, playerIndex) {
-  const team = this.store.findOneBy(this.collection, (t) => t.id == teamId); // loose equality okay if ID type varies
-
+ async removePlayer(teamId, playerIndex) {
+  const team = this.store.findOneBy(this.collection, (t) => t.id == teamId);
   if (team && Array.isArray(team.players) && playerIndex >= 0 && playerIndex < team.players.length) {
     team.players.splice(playerIndex, 1);
-    // or await this.store.write() if using async
+    await this.store.db.write(); // ✅ Save to disk
   }
 },
 
