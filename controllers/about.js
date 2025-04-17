@@ -2,19 +2,65 @@
 
 import logger from "../utils/logger.js";
 import accounts from './accounts.js';
-
+import teamsCollection from '../models/mycollection.js';
 
 const about = {
   createView(request, response) {
-    const loggedInUser = accounts.getCurrentUser(request); // Check if user is logged in
+    const loggedInUser = accounts.getCurrentUser(request);
     logger.info("About page loading!");
 
     if (loggedInUser) {
-      // User is logged in, pass user info along with static app data
+      const userTeams = teamsCollection.getUserTeam(loggedInUser.id);
+
+      let numTeams = 20 + userTeams.length;
+      let numPlayers = 0;
+      let average = 0;
+
+      for (let item of userTeams) {
+        numPlayers += item.players.length;
+      }
+
+      if (numTeams > 0) {
+        average = (numPlayers / numTeams).toFixed(1);
+      } else {
+        average = 0;
+      }
+
+      let numbers = [];
+      for (let item of userTeams) {
+        numbers.push(item.players.length);
+      }
+
+      const max = Math.max(...numbers);
+      const maxtitle = [];
+
+      for (let item of userTeams) {
+        if (item.players.length === max) {
+          maxtitle.push(item.name);
+        }
+      }
+
+      const smallest = Math.min(...numbers);
+      const smalltitle = [];
+
+      for (let item of userTeams) {
+        if (item.players.length === smallest) {
+          smalltitle.push(item.name);
+        }
+      }
+
       const viewData = {
         title: "About the Premier League App",
         fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
-        info: { 
+        picture: loggedInUser.picture,
+        displayNumTeams: numTeams,
+        displayNumPlayers: numPlayers,
+        displayAverage: average,
+        displayLargest: max,
+        displaySmallest: smallest,
+        displaySmallestTitle: smalltitle,
+        displayLargestTitle: maxtitle,
+        info: {
           appTitle: "Premier League App",
           version: 0.2,
           creators: [
@@ -26,13 +72,12 @@ const about = {
           location: "Waterford"
         }
       };
-      response.render('about', viewData); // Render the about view with the dynamic user info and static data
+
+      response.render('about', viewData);
     } else {
-      // If no user is logged in, redirect to the home page or login page
       response.redirect('/');
     }
   },
 };
 
-// here i am Exporting the 'about' controller so it can be used in other parts of the app
 export default about;

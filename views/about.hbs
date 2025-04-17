@@ -1,59 +1,71 @@
-{{> menu}}
+{{> menu id="about"}}
 
-<section class="ui left aligned middle aligned segment">
-  
-    <h2>Premier League App About</h2>
-      <p>
-        Featured on this page is some information on how this app was made!
-      </p> 
-   <div class="ui five statistics" style="margin-top: 1em;">
-    
-  {{#with info}}
-     
-    <div class="statistic">
-      <div class="value">
-        <i class="fas fa-futbol"></i>
+<section class="ui center aligned middle aligned segment">
+  <h2>About the Premier League App</h2>
+  <p>
+    The Premier League App now contains:
+  </p>
+
+  <div class="ui center aligned grid">
+    <div class="eight wide column">
+      <div class="ui centered two statistics">
+        <div class="statistic">
+          <div class="value">
+            <i class="users icon"></i>
+          </div>
+          <div class="label">
+            {{displayNumTeams}} teams
+          </div>
+        </div>
+
+        <div class="statistic">
+          <div class="value">
+            <i class="male icon"></i>
+          </div>
+          <div class="label">
+            {{displayNumPlayers}} players
+          </div>
+        </div>
       </div>
-      <div class="label">
-        App Title: <br>
-        {{appTitle}}
+
+      <div class="ui centered three statistics" style="margin-top: 2em;">
+        <div class="statistic">
+          <div class="value">
+            <i class="chart line icon"></i>
+          </div>
+          <div class="label">
+            Avg players per team: {{displayAverage}}
+          </div>
+        </div>
+
+        <div class="statistic">
+          <div class="value">
+            <i class="trophy icon"></i>
+          </div>
+          <div class="label">
+            Largest team size: {{displayLargest}} ({{#each displayLargestTitle}}{{this}} {{/each}})
+          </div>
+        </div>
+
+        <div class="statistic">
+          <div class="value">
+            <i class="flag outline icon"></i>
+          </div>
+          <div class="label">
+            Smallest team size: {{displaySmallest}} ({{#each displaySmallestTitle}}{{this}} {{/each}})
+          </div>
+        </div>
       </div>
     </div>
-    
-    <div class="statistic">
-      <div class="value">
-        <i class="fas fa-futbol"></i> 
-      </div>
-      <div class="label">
-        App Version: <br>
-        Version {{version}}
-      </div>
-    </div> 
-     
-    <div class="statistic">
-      <div class="value">
-        <i class="fas fa-futbol"></i> 
-      </div>
-      <div class="label">
-        Made in: <br>
-        {{location}}
-      </div>
-    </div> 
-	
-    <div class="statistic">
-      <div class="value">
-        <i class="fas fa-futbol"></i> 
-      </div>
-      <div class="label">
-        Created by: <br>
-        {{creators.0.name}}
-      </div>
-    </div>
-	
-	
-  {{/with}}
-  
-</div>
+  </div>
 
-  <img src="https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/Screenshot%202025-03-08%20185527.png?v=1741460213113" alt="Team Image" class="ui image manager-image">
+  <div class="ui divider"></div>
+
+  <div class="ui text container">
+    <h3>App Information</h3>
+    <p><strong>App Title:</strong> {{info.appTitle}}</p>
+    <p><strong>Version:</strong> {{info.version}}</p>
+    <p><strong>Created By:</strong> {{#each info.creators}}{{name}} - {{role}}<br>{{/each}}</p>
+    <p><strong>Location:</strong> {{info.location}}</p>
+  </div>
 </section>
