@@ -42,10 +42,22 @@ array: 'players',
   }
 },
 
-   removeTeam(id) {
-    const team = this.getInfo(id);
-    this.store.removeCollection(this.collection, team);
-},
+  async removeTeam(id) {
+  const team = this.store.findOneBy(this.collection, (team) => team.id == id); // Get the team by id
+  
+  if (team) {
+    // If the team is found, remove it from the collection
+    const index = this.store.db.data[this.collection].indexOf(team);
+    if (index !== -1) {
+      this.store.db.data[this.collection].splice(index, 1); // Remove the team from the array
+      await this.store.db.write(); // Wait for the write operation to complete
+      logger.info(`Team with id ${id} removed successfully.`);
+    }
+  } else {
+    logger.error(`Team with id ${id} not found.`);
+  }
+}
+,
  addPlayer(teamId, playerName) {
   const team = this.store.findOneBy(this.collection, (team) => team.id == teamId);
 

@@ -47,8 +47,7 @@
       "City": "Manchester",
       "manager-image": "https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/ruben.jpg?v=1741457788130",
       "players": [
-        "Bruno Fernandes",
-        "Leny Yoro"
+        "Bruno Fernandes"
       ]
     },
     {
@@ -295,8 +294,7 @@
       "City": "japan",
       "Stadium": "raimon stadium",
       "players": [
-        "Mark Evans",
-        "Jude Sharp"
+        "Mark Evans"
       ]
     }
   ]

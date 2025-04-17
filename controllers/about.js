@@ -6,34 +6,27 @@ import teamsCollection from '../models/mycollection.js';
 
 const about = {
   createView(request, response) {
-    const loggedInUser = accounts.getCurrentUser(request);
+    const loggedInUser = accounts.getCurrentUser(request);  
     logger.info("About page loading!");
 
     if (loggedInUser) {
-      const allTeams = teamsCollection.getAllTeams();  // includes 20 default + user teams
-      const userTeams = teamsCollection.getUserTeam(loggedInUser.id);
 
-      let numTeams = allTeams.length;
-      let numPlayers = 0;
+      const userTeams = teamsCollection.getUserTeam(loggedInUser.id);  // Get the user's teams
+
+      // Default values for a new user
+      let numTeams = 20;  // Default number of teams for a new user
+      let numPlayers = 40; // Default number of players for a new user
+
+      // If the user already has teams, adjust the counts accordingly
+      if (userTeams.length > 0) {
+        numTeams += userTeams.length;  // Add the user's teams to the count
+        numPlayers += userTeams.reduce((sum, team) => sum + team.players.length, 0);  // Add the number of players from each user team
+      }
+
       let average = 0;
 
-      // Count all players from all teams
-      for (let team of allTeams) {
-        if (Array.isArray(team.players)) {
-          numPlayers += team.players.length;
-        }
-      }
-
       if (numTeams > 0) {
-        average = (numPlayers / numTeams).toFixed(1);
-      } else {
-        average = 0;
-      }
-
-      // Largest/smallest stats from user-created teams
-      let numbers = [];
-      for (let team of userTeams) {
-        numbers.push(team.players.length);
+        average = (numPlayers / numTeams).toFixed(1); // Calculate the average number of players per team
       }
 
       let max = 0;
@@ -41,20 +34,23 @@ const about = {
       let maxtitle = [];
       let smalltitle = [];
 
-      if (numbers.length > 0) {
-        max = Math.max(...numbers);
-        min = Math.min(...numbers);
+      // Find the teams with the most and least players
+      if (userTeams.length > 0) {
+        const playerCounts = userTeams.map(team => team.players.length);
+        max = Math.max(...playerCounts);
+        min = Math.min(...playerCounts);
 
-        for (let team of userTeams) {
-          if (team.players.length === max) {
-            maxtitle.push(team.name);
+        for (let item of userTeams) {
+          if (item.players.length === max) {
+            maxtitle.push(item.name);
           }
-          if (team.players.length === min) {
-            smalltitle.push(team.name);
+          if (item.players.length === min) {
+            smalltitle.push(item.name);
           }
         }
       }
 
+      // Set up the view data to pass to the template
       const viewData = {
         title: "About the Premier League App",
         fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
@@ -79,6 +75,7 @@ const about = {
         }
       };
 
+      // Render the view
       response.render('about', viewData);
     } else {
       response.redirect('/');

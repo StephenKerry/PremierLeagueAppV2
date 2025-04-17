@@ -20,6 +20,13 @@
       "email": "homer.simpson@gmail.com",
       "password": "handgel12",
       "id": "cf495724-7606-44a4-85e1-7b6e61bef09c"
+    },
+    {
+      "firstName": "lisa",
+      "lastName": "simpson",
+      "email": "lisasimpson@gmail.com",
+      "password": "handgel12",
+      "id": "b06a4971-b6f3-4cbc-9653-46798c408dcd"
     }
   ]
 }
