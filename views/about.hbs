@@ -1,26 +1,29 @@
 {{> menu id="about"}}
 
-<section class="ui center aligned middle aligned segment">
-  <h2>About the Premier League App</h2>
-  <p>
-    The Premier League App now contains:
-  </p>
+<section class="ui vertical segment" style="background-color: #ffffff; padding: 2em;">
+  <div class="ui container">
+    <h2 class="ui center aligned header">About the Premier League App</h2>
 
-  <div class="ui center aligned grid">
-    <div class="eight wide column">
-      <div class="ui centered two statistics">
-        <div class="statistic">
+    <p class="ui center aligned">The Premier League App now contains:</p>
+
+    <div class="ui stackable four column grid centered padded">
+      <!-- Teams Statistic -->
+      <div class="column">
+        <div class="ui statistic">
           <div class="value">
-            <i class="users icon"></i>
+            <i class="futbol outline icon"></i>
           </div>
           <div class="label">
             {{displayNumTeams}} teams
           </div>
         </div>
+      </div>
 
-        <div class="statistic">
+      <!-- Players Statistic -->
+      <div class="column">
+        <div class="ui statistic">
           <div class="value">
-            <i class="male icon"></i>
+            <i class="users icon"></i>
           </div>
           <div class="label">
             {{displayNumPlayers}} players
@@ -28,44 +31,56 @@
         </div>
       </div>
 
-      <div class="ui centered three statistics" style="margin-top: 2em;">
-        <div class="statistic">
+      <!-- Average Players per Team -->
+      <div class="column">
+        <div class="ui statistic">
           <div class="value">
-            <i class="chart line icon"></i>
+            {{displayAverage}}
           </div>
           <div class="label">
-            Avg players per team: {{displayAverage}}
+            Avg players per team
           </div>
         </div>
+      </div>
 
-        <div class="statistic">
+      <!-- Largest Team Size -->
+      <div class="column">
+        <div class="ui statistic">
           <div class="value">
-            <i class="trophy icon"></i>
+            {{displayLargest}}
           </div>
           <div class="label">
-            Largest team size: {{displayLargest}} ({{#each displayLargestTitle}}{{this}} {{/each}})
+            Largest team size<br>({{#each displayLargestTitle}}{{this}} {{/each}})
           </div>
         </div>
+      </div>
 
-        <div class="statistic">
+      <!-- Smallest Team Size -->
+      <div class="column">
+        <div class="ui statistic">
           <div class="value">
-            <i class="flag outline icon"></i>
+            {{displaySmallest}}
           </div>
           <div class="label">
-            Smallest team size: {{displaySmallest}} ({{#each displaySmallestTitle}}{{this}} {{/each}})
+            Smallest team size<br>({{#each displaySmallestTitle}}{{this}} {{/each}})
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="ui divider"></div>
+    <div class="ui divider"></div>
 
-  <div class="ui text container">
-    <h3>App Information</h3>
-    <p><strong>App Title:</strong> {{info.appTitle}}</p>
-    <p><strong>Version:</strong> {{info.version}}</p>
-    <p><strong>Created By:</strong> {{#each info.creators}}{{name}} - {{role}}<br>{{/each}}</p>
-    <p><strong>Location:</strong> {{info.location}}</p>
+    <h3 class="ui header">App Information</h3>
+    <div class="ui list">
+      <div class="item"><strong>App Title:</strong> {{info.appTitle}}</div>
+      <div class="item"><strong>Version:</strong> {{info.version}}</div>
+      <div class="item">
+        <strong>Created By:</strong>
+        {{#each info.creators}}
+          {{this.name}} - {{this.role}}
+        {{/each}}
+      </div>
+      <div class="item"><strong>Location:</strong> {{info.location}}</div>
+    </div>
   </div>
 </section>
