@@ -3,6 +3,7 @@
 import logger from '../utils/logger.js';
 import userStore from '../models/user-store.js';
 import { v4 as uuidv4 } from 'uuid';
+import teamsCollection from "../models/mycollection.js";
 
 //create an accounts object
 const accounts = {
@@ -50,7 +51,7 @@ const accounts = {
   authenticate(request, response) {
     const user = userStore.getUserByEmail(request.body.email);
     if (user) {
-      response.cookie('team', user.email);
+      response.cookie('teams', user.email);
       logger.info('logging in' + user.email);
       response.redirect('/start');
     } else {
@@ -60,7 +61,7 @@ const accounts = {
   
  //utility function getCurrentUser to check who is currently logged in
   getCurrentUser (request) {
-    const userEmail = request.cookies.team;
+    const userEmail = request.cookies.teams;
     return userStore.getUserByEmail(userEmail);
   }
 }
