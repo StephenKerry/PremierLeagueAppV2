@@ -26,7 +26,7 @@ const accounts = {
   
   //logout function to render logout page
   logout(request, response) {
-    response.cookie('teams', '');
+    response.cookie('team', '');
     response.redirect('/');
   },
   
@@ -46,27 +46,22 @@ const accounts = {
     logger.info('registering' + user.email);
     response.redirect('/');
   },
-  
-  //authenticate function to check user credentials and either render the login page again or the start page.
   authenticate(request, response) {
-  const user = userStore.getUserByEmail(request.body.email);
-  
-  if (user) {
-    response.cookie('team', user.email);  // Set the team cookie with user email
-    logger.info('logging in ' + user.email);
-    response.redirect('/start');
-  } else {
-    response.redirect('/login');
-  }
-
-
+    const user = userStore.getUserByEmail(request.body.email);
+    if (user && user.password === request.body.password) {
+      response.cookie('team', user.email);
+      logger.info('Logging in: ' + user.email);
+      response.redirect('/start');
+    } else {
+      response.redirect('/login');
+    }
   },
+
   
- //utility function getCurrentUser to check who is currently logged in
-  getCurrentUser (request) {
+  getCurrentUser(request) {
     const userEmail = request.cookies.team;
     return userStore.getUserByEmail(userEmail);
   }
-}
+};
 
 export default accounts;
