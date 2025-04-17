@@ -5,6 +5,7 @@ import routes from "./routes.js";
 import logger from "./utils/logger.js";
 import { create } from 'express-handlebars'; 
 import bodyParser from "body-parser";
+import cookieParser from "cookie-parser";
 
 
 
