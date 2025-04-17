@@ -1,4 +1,204 @@
 {
   "teamsCollection": [
+    {
+      "id": 1,
+      "name": "Liverpool FC",
+      "image": "https://cdn.glitch.global/.../liverpool.jpg",
+      "stadium": "Anfield",
+      "manager": "Arne Slot",
+      "city": "Liverpool",
+      "managerImage": "https://cdn.glitch.global/.../slot-anfield.jpg",
+      "players": ["Mohamed Salah", "Virgil van Dijk"]
+    },
+    {
+      "id": 2,
+      "name": "Arsenal",
+      "image": "https://cdn.glitch.global/.../arsenal.webp",
+      "stadium": "Emirates",
+      "manager": "Mikel Arteta",
+      "city": "London",
+      "managerImage": "https://cdn.glitch.global/.../arteta.jpg",
+      "players": ["Bukayo Saka", "William Saliba", "Kylian Mbappe"]
+    },
+    {
+      "id": 3,
+      "name": "Manchester City",
+      "image": "https://cdn.glitch.global/.../city.webp",
+      "stadium": "Etihad",
+      "manager": "Pep Guardiola",
+      "city": "Manchester",
+      "managerImage": "https://cdn.glitch.global/.../pep.webp",
+      "players": ["Erling Haaland", "Kevin De Bruyne"]
+    },
+    {
+      "id": 4,
+      "name": "Manchester United",
+      "image": "https://cdn.glitch.global/.../manutd.webp",
+      "stadium": "Old Trafford",
+      "manager": "Erik ten Hag",
+      "city": "Manchester",
+      "managerImage": "https://cdn.glitch.global/.../tenhag.webp",
+      "players": ["Bruno Fernandes", "Marcus Rashford"]
+    },
+    {
+      "id": 5,
+      "name": "Chelsea",
+      "image": "https://cdn.glitch.global/.../chelsea.png",
+      "stadium": "Stamford Bridge",
+      "manager": "Mauricio Pochettino",
+      "city": "London",
+      "managerImage": "https://cdn.glitch.global/.../poch.jpg",
+      "players": ["Raheem Sterling", "Enzo Fernández"]
+    },
+    {
+      "id": 6,
+      "name": "Tottenham Hotspur",
+      "image": "https://cdn.glitch.global/.../tottenham.png",
+      "stadium": "Tottenham Hotspur Stadium",
+      "manager": "Ange Postecoglou",
+      "city": "London",
+      "managerImage": "https://cdn.glitch.global/.../ange.jpg",
+      "players": ["Son Heung-min", "James Maddison"]
+    },
+    {
+      "id": 7,
+      "name": "Newcastle United",
+      "image": "https://cdn.glitch.global/.../newcastle.png",
+      "stadium": "St James' Park",
+      "manager": "Eddie Howe",
+      "city": "Newcastle",
+      "managerImage": "https://cdn.glitch.global/.../howe.jpg",
+      "players": ["Bruno Guimarães", "Alexander Isak"]
+    },
+    {
+      "id": 8,
+      "name": "Aston Villa",
+      "image": "https://cdn.glitch.global/.../villa.png",
+      "stadium": "Villa Park",
+      "manager": "Unai Emery",
+      "city": "Birmingham",
+      "managerImage": "https://cdn.glitch.global/.../emery.jpg",
+      "players": ["Ollie Watkins", "Douglas Luiz"]
+    },
+    {
+      "id": 9,
+      "name": "Brighton & Hove Albion",
+      "image": "https://cdn.glitch.global/.../brighton.png",
+      "stadium": "Amex Stadium",
+      "manager": "Roberto De Zerbi",
+      "city": "Brighton",
+      "managerImage": "https://cdn.glitch.global/.../zerbi.jpg",
+      "players": ["Kaoru Mitoma", "João Pedro"]
+    },
+    {
+      "id": 10,
+      "name": "West Ham United",
+      "image": "https://cdn.glitch.global/.../westham.png",
+      "stadium": "London Stadium",
+      "manager": "David Moyes",
+      "city": "London",
+      "managerImage": "https://cdn.glitch.global/.../moyes.jpg",
+      "players": ["Jarrod Bowen", "Lucas Paquetá"]
+    },
+    {
+      "id": 11,
+      "name": "Crystal Palace",
+      "image": "https://cdn.glitch.global/.../palace.png",
+      "stadium": "Selhurst Park",
+      "manager": "Oliver Glasner",
+      "city": "London",
+      "managerImage": "https://cdn.glitch.global/.../glasner.jpg",
+      "players": ["Eberechi Eze", "Michael Olise"]
+    },
+    {
+      "id": 12,
+      "name": "Brentford",
+      "image": "https://cdn.glitch.global/.../brentford.png",
+      "stadium": "Gtech Community Stadium",
+      "manager": "Thomas Frank",
+      "city": "London",
+      "managerImage": "https://cdn.glitch.global/.../frank.jpg",
+      "players": ["Ivan Toney", "Bryan Mbeumo"]
+    },
+    {
+      "id": 13,
+      "name": "Everton",
+      "image": "https://cdn.glitch.global/.../everton.png",
+      "stadium": "Goodison Park",
+      "manager": "Sean Dyche",
+      "city": "Liverpool",
+      "managerImage": "https://cdn.glitch.global/.../dyche.jpg",
+      "players": ["Dominic Calvert-Lewin", "Dwight McNeil"]
+    },
+    {
+      "id": 14,
+      "name": "Nottingham Forest",
+      "image": "https://cdn.glitch.global/.../forest.png",
+      "stadium": "City Ground",
+      "manager": "Nuno Espírito Santo",
+      "city": "Nottingham",
+      "managerImage": "https://cdn.glitch.global/.../nuno.jpg",
+      "players": ["Morgan Gibbs-White", "Taiwo Awoniyi"]
+    },
+    {
+      "id": 15,
+      "name": "Fulham",
+      "image": "https://cdn.glitch.global/.../fulham.png",
+      "stadium": "Craven Cottage",
+      "manager": "Marco Silva",
+      "city": "London",
+      "managerImage": "https://cdn.glitch.global/.../silva.jpg",
+      "players": ["Willian", "Andreas Pereira"]
+    },
+    {
+      "id": 16,
+      "name": "Burnley",
+      "image": "https://cdn.glitch.global/.../burnley.png",
+      "stadium": "Turf Moor",
+      "manager": "Vincent Kompany",
+      "city": "Burnley",
+      "managerImage": "https://cdn.glitch.global/.../kompany.jpg",
+      "players": ["Lyle Foster", "Zeki Amdouni"]
+    },
+    {
+      "id": 17,
+      "name": "Sheffield United",
+      "image": "https://cdn.glitch.global/.../sheffield.png",
+      "stadium": "Bramall Lane",
+      "manager": "Chris Wilder",
+      "city": "Sheffield",
+      "managerImage": "https://cdn.glitch.global/.../wilder.jpg",
+      "players": ["Oli McBurnie", "Gustavo Hamer"]
+    },
+    {
+      "id": 18,
+      "name": "Luton Town",
+      "image": "https://cdn.glitch.global/.../luton.png",
+      "stadium": "Kenilworth Road",
+      "manager": "Rob Edwards",
+      "city": "Luton",
+      "managerImage": "https://cdn.glitch.global/.../edwards.jpg",
+      "players": ["Carlton Morris", "Ross Barkley"]
+    },
+    {
+      "id": 19,
+      "name": "Bournemouth",
+      "image": "https://cdn.glitch.global/.../bournemouth.png",
+      "stadium": "Vitality Stadium",
+      "manager": "Andoni Iraola",
+      "city": "Bournemouth",
+      "managerImage": "https://cdn.glitch.global/.../iraola.jpg",
+      "players": ["Dominic Solanke", "Marcus Tavernier"]
+    },
+    {
+      "id": 20,
+      "name": "Wolverhampton Wanderers",
+      "image": "https://cdn.glitch.global/.../Wolverhampton_Wanderers_FC_crest.svg.webp",
+      "stadium": "Molineux Stadium",
+      "manager": "Vítor Pereira",
+      "city": "Wolverhampton",
+      "managerImage": "https://cdn.glitch.global/.../vitor.jpg",
+      "players": ["Matheus Chuna", "Joao Gomes"]
+    }
   ]
 }
