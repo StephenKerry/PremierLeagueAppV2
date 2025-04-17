@@ -8,21 +8,24 @@ import accounts from './accounts.js';
 
 const dashboard = {
   // GET request handler for loading the dashboard view
-  createView(request, response) {
-    const loggedInUser = accounts.getCurrentUser(request);
-    if (loggedInUser) {
-      const viewData = {
-        title: 'Teams Selection',
-        teams: teamsCollection.getUserTeams(loggedInUser.id), // Get the user's teams
-        fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
-      };
-
-      logger.debug('Rendering dashboard with teams: ' + JSON.stringify(viewData.teams));
-      response.render('dashboard', viewData); // Render dashboard page with teams data
-    } else {
-      response.redirect('/'); // Redirect to login or home page if not logged in
-    }
-  },
+ createView(request, response) {
+  logger.info('dashboard rendering');
+  
+  const loggedInUser = accounts.getCurrentUser(request);  // Get the current user
+  
+  // Check if the logged-in user exists
+  if (loggedInUser) {
+    const viewData = {
+      title: 'Teams Selection',
+      teams: teamsCollection.getUserTeams(loggedInUser.id),  // Make sure loggedInUser is not undefined
+      fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
+    };
+    logger.info('about to render' + viewData.teams);
+    response.render('dashboard', viewData);  // Render the dashboard if user exists
+  } else {
+    response.redirect('/');  // Redirect to the home page if no user is logged in
+  }
+},
 
   // Add team method (unchanged)
   addTeam(request, response) {
