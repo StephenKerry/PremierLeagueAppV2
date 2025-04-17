@@ -34,8 +34,16 @@ nav {
   background-color: purple;
   color: white; 
 }
+#logout {
+  background-color: purple;
+  color: white; 
+}
 
 #about:hover {
+  background-color: darkviolet; 
+} 
+
+#logout:hover {
   background-color: darkviolet; 
 } 
 
@@ -54,4 +62,38 @@ nav {
   border: none;
   background: none;
 }
+
+.welcome-menu {
+  background-color: white;
+  border: 2px solid purple;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(128, 0, 128, 0.1); /* Soft purple shadow */
+  padding: 0.5em;
+  margin-bottom: 2em;
+}
+
+.welcome-menu .item {
+  color: black !important;
+  font-weight: bold;
+}
+
+.welcome-menu .team-logo {
+  font-size: 1.3em;
+  color: purple !important;
+}
+
+.menu-link:hover {
+  background-color: #e0d3f5 !important; /* light purple highlight on hover */
+  color: black !important;
+}
+
+.name{
+  padding-top:22.5px;
+  padding-right:5px;
+  line-height:20px;
+  font-weight:bold;
+  text-transform:capitalize;
+}
+
+
 
