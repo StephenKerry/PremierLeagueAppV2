@@ -3,7 +3,6 @@
 import logger from '../utils/logger.js';
 import userStore from '../models/user-store.js';
 import { v4 as uuidv4 } from 'uuid';
-import teamsCollection from "../models/mycollection.js";
 
 //create an accounts object
 const accounts = {
@@ -46,22 +45,24 @@ const accounts = {
     logger.info('registering' + user.email);
     response.redirect('/');
   },
+  
+  //authenticate function to check user credentials and either render the login page again or the start page.
   authenticate(request, response) {
     const user = userStore.getUserByEmail(request.body.email);
-    if (user && user.password === request.body.password) {
+    if (user) {
       response.cookie('team', user.email);
-      logger.info('Logging in: ' + user.email);
+      logger.info('logging in' + user.email);
       response.redirect('/start');
     } else {
       response.redirect('/login');
     }
   },
-
   
-  getCurrentUser(request) {
+ //utility function getCurrentUser to check who is currently logged in
+  getCurrentUser (request) {
     const userEmail = request.cookies.team;
     return userStore.getUserByEmail(userEmail);
   }
-};
+}
 
 export default accounts;
