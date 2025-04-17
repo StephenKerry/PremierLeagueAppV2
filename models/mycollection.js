@@ -8,7 +8,10 @@ const teamsCollection = {
   collection: 'teams',
 array: 'players',
 
-  
+  getUserTeam(userid) {
+  return this.store.findBy(this.collection, (team => team.userid === userid));
+},
+
   getAllTeams() {
     return this.store.findAll(this.collection);
   }, 
