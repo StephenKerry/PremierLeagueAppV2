@@ -42,6 +42,7 @@ const dashboard = {
     logger.debug(loggedInUser.id);
     const newTeam = {
       id: uuidv4(),
+      userid: loggedInUser.id,
       name: request.body.name,
       manager: request.body.manager,
       image: request.body.image,
