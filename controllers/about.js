@@ -10,23 +10,30 @@ const about = {
     logger.info("About page loading!");
 
     if (loggedInUser) {
+      const allTeams = teamsCollection.getAllTeams();  // includes 20 default + user teams
       const userTeams = teamsCollection.getUserTeam(loggedInUser.id);
 
-      let numTeams = 20 + userTeams.length;
-      let numPlayers = 40;
+      let numTeams = allTeams.length;
+      let numPlayers = 0;
       let average = 0;
 
-      // Only track user-created team player counts
-      let numbers = [];
-
-      for (let item of userTeams) {
-        const count = item.players.length;
-        numPlayers += count;
-        numbers.push(count);
+      // Count all players from all teams
+      for (let team of allTeams) {
+        if (Array.isArray(team.players)) {
+          numPlayers += team.players.length;
+        }
       }
 
       if (numTeams > 0) {
         average = (numPlayers / numTeams).toFixed(1);
+      } else {
+        average = 0;
+      }
+
+      // Largest/smallest stats from user-created teams
+      let numbers = [];
+      for (let team of userTeams) {
+        numbers.push(team.players.length);
       }
 
       let max = 0;
@@ -38,12 +45,12 @@ const about = {
         max = Math.max(...numbers);
         min = Math.min(...numbers);
 
-        for (let item of userTeams) {
-          if (item.players.length === max) {
-            maxtitle.push(item.name);
+        for (let team of userTeams) {
+          if (team.players.length === max) {
+            maxtitle.push(team.name);
           }
-          if (item.players.length === min) {
-            smalltitle.push(item.name);
+          if (team.players.length === min) {
+            smalltitle.push(team.name);
           }
         }
       }

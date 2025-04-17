@@ -23,8 +23,7 @@
       "manager-image": "https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/arteta.jpg?v=1741457480346",
       "players": [
         "Bukayo Saka",
-        "William Saliba",
-        "Kylian Mbappe"
+        "William Saliba"
       ]
     },
     {
@@ -298,21 +297,6 @@
       "players": [
         "Mark Evans",
         "Jude Sharp"
-      ]
-    },
-    {
-      "id": "210db6d3-ba28-41bf-ab0d-9c7c2389c9fb",
-      "userid": "cf495724-7606-44a4-85e1-7b6e61bef09c",
-      "name": "raimon eleven",
-      "manager": "Stephen Kerry",
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADjCAMAAADdXVr2AAACT1BMVEX/////7QCeztTzmyqezdQAc7gUT3f/8gDDZBX/8AD/8wD/+Lf2nyuj09j/7gCazNK6TRkARHC2Rxj/7a7ylx///Lr/+L4AQ3DymCP/8rAAdr776AD//77BXxXScCAAS3u+Vxbq9PeIuMPJZxX3tlyx19xwn7D/6qr704mkNwDP5urE4OXz4QA1aIjskigLSnS3qQDNvQC/TRP5yHm8RwDYeCLt9vgARnvbygDDtAD/963hrg3jhiV6qrhNfZf/+gAALmD825Ta2t7HYQD/9pv0pT4nXYASO1cAOW7YmQ/u3qL1rlDl5unQypH/9Zb/84D/8m3/7zbNfxLy0QeQkZH4wnDnugvLuICKMwAAZq8ATozBx8iprbqXjAD/8E+mmQCKd1aqmnCtq5KSOwAtRmh/IQC6eSSSLQCKVTR2OyvqwgqGh2yTRB6wsrLHy9bVgQB0HAADY50tREeemnCUmKZlUkFIeZRnZmAYO1JSXkRvcjd6OAB7aEt8enG8rHeDeXLipmzRhU+BYFaalol+Tj0vMTXCZznMfUuljWU9NR2XVwB7PSKYd0R5YUOsrKKgnX1mNhNfDAByfId1TRqQXh4+RmFNX3FWPkhlPj84WG1OXFyrVRJwZUGYWjZ+NApxc15KRVBQOzg9KRlsfIyzqk2moF0AFkqUYSOpYgCZeVpFUz5zcRuOiScAACuWaCm9vpAAHz8AAAA3Rz9PUCYAGFkwPjgAIzwAMnKOiU8ABFRtYgCUdQA5AwBRGgCYkUR6d0xBLidTMRDVm0oiAAC8nFxe7J1+AAAgAElEQVR4nO2d60NTV7bAA8GEvCAhweQAETRqoAKBiEFtQR4VaIQ+aCwiWqBWrcVQFRUUQafqDKNjxced25GOttNqH3qrU29b79yx1rnzh9213/ucnCAWTuQDq1gDhmT/zlp7PfZeZ8dkWpIlWZIlWZ",
-      "manager-image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIQEhUTEhIWFhUVFRcVGBcXFRcVFxUXFRUWFhUYFRUYHSggGBolGxgXITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFRAQGC0dHR0tLS0tLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0rNzctLTctLTctK//AABEIAQMAwgMBIgACEQEDEQH/xAAcAAABBAMBAAAAAAAAAAAAAAAAAQMEBQIGBwj/xABCEAABAwICBwYDBQcDAwUAAAABAAIDBBEhMQUGEkFRYXEHIoGRofATMrEUQoLB0VJicpKi4fEII7IVQ3MzU4Ozwv/EABkBAAMBAQEAAAAAAAAAAAAAAAABAgMEBf/EACIRAQEBAQACAgICAwAAAAAAAAABAhEDIRIxE0EyUQQicf/aAAwDAQACEQMRAD8A6vZJZKhWyJZKhCYCEIQAkSoQCWQmKytjhbtSPDRzP0GZWq12vsQJbDGX/vO7o8syl0+VuKRxAzNuuC59LrZM/wC9s/w4euagz6U2sXOJ6lHYfxdIdWxDORn8zf1Ssq43ZSMPRwP5rlcleEwNJDil8j+DsKFzLR2n5I/leemY8itn0frW12ErbfvN/MJylctmSLCnqGSDaY4OHJOFNJEIQgEQUqEAiRKkQAhFkII6hCEjCEJUAiEIQATZafrHro2K7ILOdvduHQb+qg68aykkwRHujB7h948OgWh7dyldcXMrGtq31BLpHkk8SowIYmnyWCiSVGCy1ttnHUyWtAUKavKiyPulbHdY3yNp4iPqSeaZdMeaktgSmmU/kX8DMdU9u8q0otMkYFVjoE25llWfJYjXjlbvozTro3BzHWPoeRC6HoLTjKlu4PAxbx5t5LhlPUkK80RpMscHNNiDfPI8l0Z8nXPvx8dtQqnQGmW1LcbB4GI4jiFbLVgRCEIASJUiAEISoDNCVCQIhCVACrNYa/4ED",
-      "City": "japan",
-      "Stadium": "raimon stadium",
-      "players": [
-        "Steve Jobs",
-        "Bill Clinton",
-        "Thiery Henry"
       ]
     }
   ]
