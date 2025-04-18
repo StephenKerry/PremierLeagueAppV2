@@ -69,21 +69,7 @@ const accounts = {
       // Fetch user's team from the teamsCollection
       const userTeam = teamsCollection.getUserTeam(user.id);
 
-      // If user does not have a team, create one (optional logic)
-      if (!userTeam) {
-        const newTeam = {
-          id: uuidv4(),
-          userid: user.id,
-          name: `${user.name}'s Team`,
-          manager: '',
-          players: []
-        };
-        teamsCollection.addTeam(newTeam);
-      }
-
-      response.redirect('/start');
-    } else {
-      response.redirect('/login');
+     
     }
   },
   
