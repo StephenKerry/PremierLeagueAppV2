@@ -27,6 +27,13 @@
       "email": "lisasimpson@gmail.com",
       "password": "handgel12",
       "id": "b06a4971-b6f3-4cbc-9653-46798c408dcd"
+    },
+    {
+      "firstName": "new",
+      "lastName": "tester",
+      "email": "newtester@gmail.com",
+      "password": "handgel12",
+      "id": "f6d15b9e-2b90-4b35-875c-89389ca3cbae"
     }
   ]
 }
