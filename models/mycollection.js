@@ -4,96 +4,121 @@ import logger from '../utils/logger.js';
 import JsonStore from './json-store.js';
 
 const teamsCollection = {
-  store: new JsonStore('./models/mycollection.json', { teams: [] }),
-  collection: 'teams',
+  store: new JsonStore('./models/mycollection.json', { users: [] }), // Assuming the JSON structure starts with an empty array of users
+  collection: 'users', // This will be "users" instead of "teams" for the user-specific collection
   array: 'players',
 
-  // Get team by user ID
-  getUserTeam(userid) {
-    return this.store.findBy(this.collection, (team) => team.userid === userid);
+  // Get user by user ID
+  getUser(userid) {
+    return this.store.findBy(this.collection, (user) => user.userId === userid);
   },
 
-  // Get all teams
-  getAllTeams() {
+  // Get all users
+  getAllUsers() {
     return this.store.findAll(this.collection);
   },
 
-  // Get all players from all teams
-  getAllPlayers() {
-    const teams = this.getAllTeams(); // get all teams
-    let allPlayers = [];
+  // Add a player to a specific team's custom collection for a user
+  async addPlayerToUserTeam(userId, teamId, playerName) {
+    const user = this.getUser(userId); // Get the user by userId
 
-    for (const team of teams) {
-      if (Array.isArray(team.players)) {
-        allPlayers = allPlayers.concat(team.players); // merge all players from each team
-      }
+    if (!user) {
+      logger.error(`User with ID ${userId} not found.`);
+      return;
     }
 
-    return allPlayers;
-  },
-
-  // Add a new team
-  addTeam(team) {
-    this.store.addCollection(this.collection, team);
-  },
-
-  // Remove a player from a team
-  async removePlayer(teamId, playerIndex) {
-    const team = this.store.findOneBy(this.collection, (t) => t.id == teamId);
-    if (team && Array.isArray(team.players) && playerIndex >= 0 && playerIndex < team.players.length) {
-      team.players.splice(playerIndex, 1);
-      await this.store.db.write(); // ✅ Save to disk
+    // Check if the user has this team in their collection, if not, initialize it
+    if (!user.mycollection) {
+      user.mycollection = { teams: [], customTeams: {} };
     }
-  },
 
-  // Remove a team
-  async removeTeam(id) {
-    const team = this.store.findOneBy(this.collection, (team) => team.id == id); // Get the team by id
-    if (team) {
-      const index = this.store.db.data[this.collection].indexOf(team);
-      if (index !== -1) {
-        this.store.db.data[this.collection].splice(index, 1); // Remove the team from the array
-        await this.store.db.write(); // Wait for the write operation to complete
-        logger.info(`Team with id ${id} removed successfully.`);
+    if (!user.mycollection.customTeams[teamId]) {
+      user.mycollection.customTeams[teamId] = { players: [] };
+    }
+
+    // Add player to the specific team
+    const cleanName = playerName.trim();
+    if (cleanName.length > 0) {
+      const team = user.mycollection.customTeams[teamId];
+      if (!team.players.includes(cleanName)) {
+        team.players.push(cleanName);
+        logger.info(`Player ${playerName} added to team ${teamId} for user ${userId}.`);
+
+        // Ensure the team ID is added to the user's `teams` collection if it's not already there
+        if (!user.mycollection.teams.includes(teamId)) {
+          user.mycollection.teams.push(teamId);
+        }
+
+        await this.store.db.write(); // Save the changes to disk
+      } else {
+        logger.info(`Player ${playerName} is already in team ${teamId} for user ${userId}.`);
       }
     } else {
-      logger.error(`Team with id ${id} not found.`);
+      logger.error(`Invalid player name: ${playerName}`);
     }
   },
 
-  // Add a player to a team
-  addPlayer(teamId, playerName) {
-    const team = this.store.findOneBy(this.collection, (team) => team.id == teamId);
+  // Example function to remove a player (not shown in your original code)
+  async removePlayerFromUserTeam(userId, teamId, playerName) {
+    const user = this.getUser(userId);
 
-    if (team) {
-      if (!Array.isArray(team.players)) {
-        team.players = [];
+    if (user && user.mycollection && user.mycollection.customTeams[teamId]) {
+      const team = user.mycollection.customTeams[teamId];
+      const playerIndex = team.players.indexOf(playerName);
+
+      if (playerIndex !== -1) {
+        team.players.splice(playerIndex, 1);
+        logger.info(`Player ${playerName} removed from team ${teamId} for user ${userId}.`);
+        await this.store.db.write();
+      } else {
+        logger.error(`Player ${playerName} not found in team ${teamId} for user ${userId}.`);
       }
+    } else {
+      logger.error(`Team ${teamId} not found for user ${userId}.`);
+    }
+  },
 
-      const cleanName = playerName.trim();
-      if (cleanName.length > 0) {
-        team.players.push(cleanName);
+  // Get all players for a user from custom teams
+  getPlayersForUser(userId) {
+    const user = this.getUser(userId);
+    if (user && user.mycollection && user.mycollection.customTeams) {
+      let allPlayers = [];
+      for (const teamId in user.mycollection.customTeams) {
+        if (user.mycollection.customTeams[teamId].players) {
+          allPlayers = allPlayers.concat(user.mycollection.customTeams[teamId].players);
+        }
       }
+      return allPlayers;
+    }
+    return [];
+  },
+
+  // Add a team for a user (if needed)
+  addTeamForUser(userId, teamId) {
+    const user = this.getUser(userId);
+    if (user) {
+      if (!user.mycollection) {
+        user.mycollection = { teams: [], customTeams: {} };
+      }
+      if (!user.mycollection.teams.includes(teamId)) {
+        user.mycollection.teams.push(teamId);
+        logger.info(`Team ${teamId} added to user ${userId}.`);
+        this.store.db.write(); // Save the updated data
+      } else {
+        logger.info(`Team ${teamId} already in user ${userId}'s collection.`);
+      }
+    } else {
+      logger.error(`User ${userId} not found.`);
     }
   },
 
-  // Remove a manager from a team
-  removeManager(teamId) {
-    const team = this.getInfo(teamId);
-    if (team) {
-      team.manager = '';
+  // Get info about a specific user's custom team
+  getUserTeamInfo(userId, teamId) {
+    const user = this.getUser(userId);
+    if (user && user.mycollection && user.mycollection.customTeams[teamId]) {
+      return user.mycollection.customTeams[teamId];
     }
-  },
-
-  // Get information about a specific team
-  getInfo(id) {
-    return this.store.findOneBy(this.collection, (teams) => teams.id == id);
-  },
-
-  // Get all teams managed by a specific manager
-  getTeamManager(managerName) {
-    const teams = this.getAllTeams();
-    return teams.filter(team => team.manager === managerName);  // Filter teams by manager
+    return null;
   }
 };
 
