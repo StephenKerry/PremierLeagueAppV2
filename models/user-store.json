@@ -34,6 +34,20 @@
       "email": "newtester@gmail.com",
       "password": "handgel12",
       "id": "f6d15b9e-2b90-4b35-875c-89389ca3cbae"
+    },
+    {
+      "firstName": "jason",
+      "lastName": "nguyen",
+      "email": "jdaween@gmail.com",
+      "password": "handgel12",
+      "id": "7f449d96-f77e-4ad0-b261-3d78b4c720ef"
+    },
+    {
+      "firstName": "yt",
+      "lastName": "rapper",
+      "email": "yt@gmail.com",
+      "password": "handgel12",
+      "id": "719158d2-4d3d-4a35-a4c1-805a9a5429bd"
     }
   ]
 }

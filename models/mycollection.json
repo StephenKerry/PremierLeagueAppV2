@@ -186,8 +186,7 @@
       "City": "Liverool",
       "manager-image": "https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/moyes.jpg?v=1741458707318",
       "players": [
-        "Beto",
-        "Carlos Alcaraz"
+        "Beto"
       ]
     },
     {
@@ -280,6 +279,20 @@
         "Mark Evans",
         "Jude Sharp"
       ]
+    },
+    {
+      "id": "58b32a90-ee2e-47f8-bee9-f1d49766bc71",
+      "userid": "7f449d96-f77e-4ad0-b261-3d78b4c720ef",
+      "name": "undefined's Team",
+      "manager": "",
+      "players": []
+    },
+    {
+      "id": "9530deef-1893-4656-9d12-9d72e09591b4",
+      "userid": "719158d2-4d3d-4a35-a4c1-805a9a5429bd",
+      "name": "undefined's Team",
+      "manager": "",
+      "players": []
     }
   ]
 }
