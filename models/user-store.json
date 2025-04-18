@@ -55,6 +55,27 @@
       "email": "pnextdoor@gmail.com",
       "password": "handgel12",
       "id": "00b1bdd3-c9c9-4f34-b535-5f30ca8d9eba"
+    },
+    {
+      "firstName": "joe",
+      "lastName": "barber",
+      "email": "jbarber:@hmail.com",
+      "password": "handgel12",
+      "id": "385cbb0f-002e-4dff-8460-ddb194f8ee52"
+    },
+    {
+      "firstName": "marger",
+      "lastName": "simpson",
+      "email": "msimpson@gmail.com",
+      "password": "handgel12",
+      "id": "fe7b1ea6-31b5-4a69-be9c-7539c6bf8ec8"
+    },
+    {
+      "firstName": "linsoln",
+      "lastName": "loud",
+      "email": "lloud@gmail.com",
+      "password": "handgel12",
+      "id": "0accd17e-5e68-4559-821a-cb01d1107b0d"
     }
   ]
 }

@@ -329,6 +329,20 @@
         "Bill Clinton",
         "Thiery Henry"
       ]
+    },
+    {
+      "id": "cb05c662-4931-48bb-bcf6-eb392d71fc8b",
+      "userid": "385cbb0f-002e-4dff-8460-ddb194f8ee52",
+      "name": "undefined's Team",
+      "manager": "",
+      "players": []
+    },
+    {
+      "id": "724a6bad-3d73-4354-baae-3fb60ad9420f",
+      "userid": "fe7b1ea6-31b5-4a69-be9c-7539c6bf8ec8",
+      "name": "undefined's Team",
+      "manager": "",
+      "players": []
     }
   ]
 }

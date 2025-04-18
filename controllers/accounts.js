@@ -2,94 +2,78 @@
 
 import logger from '../utils/logger.js';
 import userStore from '../models/user-store.js';
-import teamsCollection from '../models/mycollection.js';  // Importing the teams collection
+import teamsCollection from '../models/mycollection.js';
 import { v4 as uuidv4 } from 'uuid';
 
 const accounts = {
 
-  //index function to render index page
+  // Index page
   index(request, response) {
     const viewData = {
       title: 'Login or Signup',
     };
     response.render('index', viewData);
   },
-  
-  //login function to render login page
+
+  // Login page
   login(request, response) {
     const viewData = {
       title: 'Login to the Service',
     };
     response.render('login', viewData);
   },
-  
-  //logout function to render logout page
+
+  // Logout
   logout(request, response) {
     response.cookie('team', '');
     response.redirect('/');
   },
-  
-  //signup function to render signup page
+
+  // Signup page
   signup(request, response) {
     const viewData = {
       title: 'Login to the Service',
     };
     response.render('signup', viewData);
   },
-  
-  //register function to render the registration page for adding a new user
+
+  // Register user (without creating a new team)
   register(request, response) {
     const user = request.body;
     user.id = uuidv4();
     userStore.addUser(user);
-    logger.info('registering ' + user.email);
-
-    // Create a new team for the user upon registration
-    const newTeam = {
-      id: uuidv4(),
-      userid: user.id,
-      name: `${user.name}'s Team`,
-      manager: '',
-      players: []
-    };
-
-    // Add the newly created team to the teams collection
-    teamsCollection.addTeam(newTeam);
-
+    logger.info('Registering ' + user.email);
     response.redirect('/');
   },
-  
-  //authenticate function to check user credentials and either render the login page again or the start page.
+
+  // Authenticate login
   authenticate(request, response) {
     const user = userStore.getUserByEmail(request.body.email);
     if (user && user.password === request.body.password) {
       response.cookie('team', user.email);
       logger.info('Logging in: ' + user.email);
-
-      // Fetch user's team from the teamsCollection
-      const userTeam = teamsCollection.getUserTeam(user.id);
-
-     
+      response.redirect('/start');
+    } else {
+      response.redirect('/login');
     }
   },
-  
-  //utility function getCurrentUser to check who is currently logged in
+
+  // Get current logged-in user
   getCurrentUser(request) {
     const userEmail = request.cookies.team;
     return userStore.getUserByEmail(userEmail);
   },
 
-  // Function to reset teams and players for the logged-in user
+  // Reset user's team and players
   resetTeamsAndPlayersForUser(userEmail) {
     const user = userStore.getUserByEmail(userEmail);
     const userTeam = teamsCollection.getUserTeam(user.id);
 
-    // Clear player's data if any (or handle other specific logic you want)
     if (userTeam) {
       userTeam.players = [];
-      userTeam.manager = '';  // Optionally clear manager as well
+      userTeam.manager = '';
       logger.info(`Resetting team data for user: ${user.email}`);
-      teamsCollection.addTeam(userTeam);  // Save the reset team data
+      teamsCollection.addTeam(userTeam); // You might want to change this to updateTeam
     }
   }
 };
