@@ -95,5 +95,19 @@ nav {
   text-transform:capitalize;
 }
 
+/* Style for Overall Statistics Title */
+.overall-statistics-title {
+  color: #006666; /* dark teal */
+  font-family: 'Poppins', 'Helvetica Neue', helvetica, arial, sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+} 
 
+.profilepic{
+  padding-top:15px;
+  padding-right:5px;
+  line-height:20px;
+  font-weight:bold;
+}
 

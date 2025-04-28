@@ -48,13 +48,13 @@ const dashboard = {
       image: request.body.image,
       "manager-image": request.body["manager-image"],
       City: request.body.City,
-      Stadium: request.body.Stadium,
+      Stadium: request.body.Stadium, 
+      picture: request.files.picture,
       players: request.body.players.split(",").map(p => p.trim())
     };
 
-    teamsCollection.addTeam(newTeam); // Add new team to the collection
-    response.redirect('/dashboard'); // Redirect to dashboard after adding team
-  },
+    teamsCollection.addTeam(newTeam, function(){  response.redirect("/dashboard");                                            }; // Add new team to the collection// Redirect to dashboard after adding team
+  })
 
   // Delete team method (unchanged)
   deleteTeam(request, response) {
