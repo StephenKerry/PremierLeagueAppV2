@@ -1,5 +1,69 @@
 {{> welcomemenu }}
 
 <section class="ui center aligned middle aligned segment">
-  <p> Sign up or Log in... </p>
+  <p> Sign up or Log in... </p> 
+  <div class="ui center aligned grid">
+<div class="sixteen wide column" style="background-color: lightyellow; border: solid 1px black; border-radius: 10px; margin: 1.5em; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);">      <h2>
+        Overall PlayCollection Statistics
+      </h2>
+        <div class="ui centered four statistics">
+
+  
+      
+        <div class="ui statistic">
+          <div class="value">
+            <i class="futbol outline icon"></i>
+          </div>
+          <div class="label">
+            {{displayNumTeams}} teams
+          </div>
+          </div>
+
+      <!-- Players Statistic -->
+     
+        <div class="ui statistic">
+          <div class="value">
+            <i class="users icon"></i>
+          </div>
+          <div class="label">
+            {{displayNumPlayers}} players
+          </div>
+        </div>
+      
+
+      <!-- Average Players per Team -->
+      
+        <div class="ui statistic">
+          <div class="value">
+            {{displayAverage}}
+          </div>
+          <div class="label">
+            Avg players per team
+          </div>
+        </div>
+      
+
+      <!-- Largest Team Size -->
+     
+        <div class="ui statistic">
+          <div class="value">
+            {{displayLargest}}
+          </div>
+          <div class="label">
+            Largest Created team size<br>({{#each displayLargestTitle}}{{this}} {{/each}})
+          </div>
+        </div>
+      
+
+      <!-- Smallest Team Size -->
+     
+        <div class="ui statistic">
+          <div class="value">
+            {{displaySmallest}}
+          </div>
+          <div class="label">
+            Smallest Created team size<br>({{#each displaySmallestTitle}}{{this}} {{/each}})
+          </div>
+        
+     
 </section>
