@@ -29,18 +29,18 @@ array: 'players',
   return allPlayers;
 },
 
-    async addT(playlist, response) {
+    async addTeam(team, response) {
     try {
       // call uploader function; takes in the playlist object, returns an image url
-      playlist.picture = await this.store.uploader(playlist);
+      team.picture = await this.store.uploader(team);
 
       // add playlist to JSON file, then return to dashboard controller
-      this.store.addCollection(this.collection, playlist);
+      this.store.addCollection(this.collection, team);
       response();
     } 
     // error handling
     catch (error) {
-      logger.error("Error processing playlist:", error);
+      logger.error("Error processing team:", error);
       response(error);
     }
   },

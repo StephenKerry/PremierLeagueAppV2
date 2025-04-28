@@ -1,26 +1,42 @@
-
-
 {{> menu id="dashboard"}}
 {{> addteam}}
-<section class="ui left aligned middle aligned segment">
-  
-    <h2>Teams Selection</h2>
-     {{#each teams}}
-      <section class="ui left aligned middle aligned segment">
-        <h3 class="ui header">
-          {{name}} 
-          <img src="{{image}}"> 
-          <a href="/team/{{id}}" class="ui icon button">
-      <i class="fas fa-futbol"></i>
-    </a> 
-          <a href="/dashboard/deleteteam/{{id}}">
-   <i class="ui trash black icon"></i>
-</a>
-        </h3>
-      </section>
-  
-   {{/each}}
-  
-   
 
+<section class="ui left aligned middle aligned segment">
+  <h2>Teams Selection</h2>
+
+  {{#unless teams}}
+    <h3 class="ui message">
+      Start adding your teams!
+    </h3>
+  {{/unless}}
+
+  <div class="ui centered cards">
+
+    {{#each teams}}
+      <div class="ui card">
+        {{#if image}}
+          <div class="image">
+            <img src="{{image}}" alt="Team Image">
+          </div>
+        {{/if}}
+        <div class="content">
+          <a class="header">{{name}}</a>
+
+          <div class="meta">
+            <span>Team ID: {{id}}</span>
+          </div>
+        </div>
+
+        <div class="extra content">
+          <a href="/team/{{id}}" class="ui icon button">
+            <i class="fas fa-futbol"></i>
+          </a>
+          <a href="/dashboard/deleteteam/{{id}}" class="ui icon button">
+            <i class="ui trash black icon"></i>
+          </a>
+        </div>
+      </div>
+    {{/each}}
+
+  </div>
 </section>
