@@ -53,8 +53,10 @@ const dashboard = {
       players: request.body.players.split(",").map(p => p.trim())
     };
 
-    teamsCollection.addTeam(newTeam, function(){  response.redirect("/dashboard");                                            }; // Add new team to the collection// Redirect to dashboard after adding team
-  })
+    teamsCollection.addTeam(newTeam, function() {
+        response.redirect("/dashboard");
+    });
+  },
 
   // Delete team method (unchanged)
   deleteTeam(request, response) {

@@ -29,10 +29,23 @@ array: 'players',
   return allPlayers;
 },
 
-  
-  addTeam(team) {
-    this.store.addCollection(this.collection, team);
-}, 
+    async addT(playlist, response) {
+    try {
+      // call uploader function; takes in the playlist object, returns an image url
+      playlist.picture = await this.store.uploader(playlist);
+
+      // add playlist to JSON file, then return to dashboard controller
+      this.store.addCollection(this.collection, playlist);
+      response();
+    } 
+    // error handling
+    catch (error) {
+      logger.error("Error processing playlist:", error);
+      response(error);
+    }
+  },
+
+ 
   
  async removePlayer(teamId, playerIndex) {
   const team = this.store.findOneBy(this.collection, (t) => t.id == teamId);
