@@ -76,6 +76,13 @@
       "email": "lloud@gmail.com",
       "password": "handgel12",
       "id": "0accd17e-5e68-4559-821a-cb01d1107b0d"
+    },
+    {
+      "firstName": "poppy",
+      "lastName": "keogh",
+      "email": "poop@gmail.com",
+      "password": "poop",
+      "id": "6e2c6139-64cd-4254-b1af-2d00be5fb296"
     }
   ]
 }
