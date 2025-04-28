@@ -6,65 +6,53 @@ import { v4 as uuidv4 } from 'uuid';
 import accounts from './accounts.js';
 
 const dashboard = {
-  // GET request handler for loading the dashboard view
   createView(request, response) {
     logger.info('dashboard rendering');
-    
-    const loggedInUser = accounts.getCurrentUser(request);  // Get the current user
-    
-    // Check if the logged-in user exists
+    const loggedInUser = accounts.getCurrentUser(request);
     if (loggedInUser) {
-      // Fetch the first 20 teams and the teams that the user has created
-      const first20Teams = teamsCollection.getAllTeams().slice(0, 20); // Get first 20 teams
-      const userTeams = teamsCollection.getUserTeam(loggedInUser.id);  // Get user-specific teams
-
-      // Combine both sets of teams (first 20 teams and user-created teams)
+      const first20Teams = teamsCollection.getAllTeams().slice(0, 20);
+      const userTeams = teamsCollection.getUserTeam(loggedInUser.id);
       const combinedTeams = [...first20Teams, ...userTeams];
 
-      // Prepare view data
       const viewData = {
         title: 'Teams Selection',
-        teams: combinedTeams,  // Combined teams data
+        teams: combinedTeams,
         fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
+        picture: loggedInUser.picture,
       };
 
       logger.info('about to render dashboard with teams:', viewData.teams);
-
-      response.render('dashboard', viewData);  // Render the dashboard if user exists
+      response.render('dashboard', viewData);
     } else {
-      response.redirect('/');  // Redirect to the home page if no user is logged in
+      response.redirect('/');
     }
   },
 
-  // Add team method (unchanged)
- addTeam(request, response) {
-  const loggedInUser = accounts.getCurrentUser(request);
-  logger.debug(loggedInUser.id);
-  
-  const newTeam = {
-    id: uuidv4(),
-    userid: loggedInUser.id,
-    name: request.body.name,
-    manager: request.body.manager,
-    image: request.body.image,
-    "manager-image": request.body["manager-image"],
-    City: request.body.City,
-    Stadium: request.body.Stadium, 
-    picture: request.files ? request.files.picture : null,  // Be safe here
-    players: request.body.players.split(",").map(p => p.trim())
-  };
+  addTeam(request, response) {
+    const loggedInUser = accounts.getCurrentUser(request);   
+    const newTeam = {
+      id: uuidv4(),
+      userid: loggedInUser.id,
+      name: request.body.name,
+      manager: request.body.manager,
+      City: request.body.City,
+      Stadium: request.body.Stadium,
+      image: request.body.image,
+      "manager-image": request.body["manager-image"],
+      picture: request.files ? request.files.picture : null,
+      players: [],
+    };
 
-  teamsCollection.addTeam(newTeam, function());  // ✅ JUST call it without a function!
-  response.redirect("/dashboard");   // ✅ Then immediately redirect
-},
+    teamsCollection.addTeam(newTeam, function() {
+      response.redirect("/dashboard");
+    });
+  },
 
-
-  // Delete team method (unchanged)
   deleteTeam(request, response) {
     const teamId = request.params.id;
     logger.debug(`Deleting Team ${teamId}`);
-    teamsCollection.removeTeam(teamId); // Remove team by ID
-    response.redirect("/dashboard"); // Redirect to dashboard after deleting
+    teamsCollection.removeTeam(teamId);
+    response.redirect("/dashboard");
   },
 };
 
