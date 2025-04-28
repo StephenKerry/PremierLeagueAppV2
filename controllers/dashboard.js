@@ -37,26 +37,27 @@ const dashboard = {
   },
 
   // Add team method (unchanged)
-  addTeam(request, response) {
-    const loggedInUser = accounts.getCurrentUser(request);
-    logger.debug(loggedInUser.id);
-    const newTeam = {
-      id: uuidv4(),
-      userid: loggedInUser.id,
-      name: request.body.name,
-      manager: request.body.manager,
-      image: request.body.image,
-      "manager-image": request.body["manager-image"],
-      City: request.body.City,
-      Stadium: request.body.Stadium, 
-      picture: request.files.picture,
-      players: request.body.players.split(",").map(p => p.trim())
-    };
+ addTeam(request, response) {
+  const loggedInUser = accounts.getCurrentUser(request);
+  logger.debug(loggedInUser.id);
+  
+  const newTeam = {
+    id: uuidv4(),
+    userid: loggedInUser.id,
+    name: request.body.name,
+    manager: request.body.manager,
+    image: request.body.image,
+    "manager-image": request.body["manager-image"],
+    City: request.body.City,
+    Stadium: request.body.Stadium, 
+    picture: request.files ? request.files.picture : null,  // Be safe here
+    players: request.body.players.split(",").map(p => p.trim())
+  };
 
-    teamsCollection.addTeam(newTeam, function() {
-        response.redirect("/dashboard");
-    });
-  },
+  teamsCollection.addTeam(newTeam, function());  // ✅ JUST call it without a function!
+  response.redirect("/dashboard");   // ✅ Then immediately redirect
+},
+
 
   // Delete team method (unchanged)
   deleteTeam(request, response) {
