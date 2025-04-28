@@ -9,9 +9,49 @@ const accounts = {
 
   // Index page
   index(request, response) {
+    const allTeams = teamsCollection.getAllTeams();
+    const allPlayers = teamsCollection.getAllPlayers();
+
+    let largestTeamSize = 0;
+    let smallestTeamSize = Number.MAX_SAFE_INTEGER;
+    let largestTeams = [];
+    let smallestTeams = [];
+
+    for (const team of allTeams) {
+      const teamSize = team.players ? team.players.length : 0;
+      
+      if (teamSize > largestTeamSize) {
+        largestTeamSize = teamSize;
+        largestTeams = [team.name];
+      } else if (teamSize === largestTeamSize) {
+        largestTeams.push(team.name);
+      }
+
+      if (teamSize < smallestTeamSize) {
+        smallestTeamSize = teamSize;
+        smallestTeams = [team.name];
+      } else if (teamSize === smallestTeamSize) {
+        smallestTeams.push(team.name);
+      }
+    }
+
+    // Handle if no teams
+    if (allTeams.length === 0) {
+      smallestTeamSize = 0;
+      largestTeamSize = 0;
+    }
+
     const viewData = {
       title: 'Login or Signup',
+      displayNumTeams: allTeams.length,
+      displayNumPlayers: allPlayers.length,
+      displayAverage: allTeams.length > 0 ? (allPlayers.length / allTeams.length).toFixed(2) : 0,
+      displayLargest: largestTeamSize,
+      displayLargestTitle: largestTeams,
+      displaySmallest: smallestTeamSize,
+      displaySmallestTitle: smallestTeams,
     };
+
     response.render('index', viewData);
   },
 
@@ -73,7 +113,7 @@ const accounts = {
       userTeam.players = [];
       userTeam.manager = '';
       logger.info(`Resetting team data for user: ${user.email}`);
-      teamsCollection.addTeam(userTeam); // You might want to change this to updateTeam
+      teamsCollection.addTeam(userTeam); // You might want to change this to updateTeam if needed
     }
   }
 };
