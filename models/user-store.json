@@ -83,6 +83,14 @@
       "email": "poop@gmail.com",
       "password": "poop",
       "id": "6e2c6139-64cd-4254-b1af-2d00be5fb296"
+    },
+    {
+      "firstName": "Stephen",
+      "lastName": "Kerry",
+      "email": "sk@gmail.com",
+      "password": "handgel12",
+      "profilepic": "HomerSimpson.webp",
+      "id": "eaa85d42-f8fb-4ebf-a068-78fa79b1a5ff"
     }
   ]
 }
