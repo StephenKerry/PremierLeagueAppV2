@@ -143,6 +143,14 @@
       "email": "Rw@gmail.com",
       "password": "123",
       "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745925075/qji7wgyoftfgnk5ifkvb.avif"
+    },
+    {
+      "id": "41bc16f4-10c9-460d-a2b3-a36742b1abc0",
+      "firstName": "israel",
+      "lastName": "Adesanya",
+      "email": "IA@gmail.com",
+      "password": "ufc",
+      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745926546/qc0hcmgwqfk6ystyzdlo.webp"
     }
   ]
 }
