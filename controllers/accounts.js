@@ -78,13 +78,38 @@ const accounts = {
   },
 
   // Register user (without creating a new team)
-  register(request, response) {
-    const user = request.body;
-    user.id = uuidv4();
-    userStore.addUser(user);
-    logger.info('Registering ' + user.email);
-    response.redirect('/');
+  async register(request, response) {
+    const user = {
+      id: uuidv4(),
+      firstName: request.body.firstName,
+      lastName: request.body.lastName,
+      email: request.body.email,
+      password: request.body.password,
+    };
+
+    const file = request.files?.profilepic;  
+
+    try {
+      
+      if (!file) {
+        logger.error('No file uploaded!');
+        response.status(400).send('No profile picture uploaded.');
+        return;
+      }
+
+      
+      await userStore.addUser(user, file);
+
+      
+      logger.info('Registering user: ' + user.email);
+      response.cookie('team', user.email);  
+      response.redirect('/start');  
+    } catch (err) {
+      logger.error('Error registering user:', err);
+      response.status(500).send('Registration failed. Please try again.');
+    }
   },
+
 
   // Authenticate login
   authenticate(request, response) {

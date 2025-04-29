@@ -98,6 +98,27 @@
       "email": "sktest@gmail.com",
       "password": "handgel12",
       "id": "32439ead-758b-4eee-a92e-9eff0576395c"
+    },
+    {
+      "firstName": "test",
+      "lastName": "tester",
+      "email": "test@gmail.com",
+      "password": "handgel12",
+      "id": "c477db6e-27a3-48f8-88ea-53ca5b1a2d47"
+    },
+    {
+      "firstName": "Stephen",
+      "lastName": "Kerry",
+      "email": "cc@gmail.com",
+      "password": "handgel12",
+      "id": "7b449857-a438-42e9-bcd3-455c646bb99f"
+    },
+    {
+      "id": "b3d6092d-4a93-4b5c-9423-6533890b6590",
+      "firstName": "Stephen",
+      "lastName": "Kerry",
+      "email": "mvp@gmail.com",
+      "password": "handgel12"
     }
   ]
 }
