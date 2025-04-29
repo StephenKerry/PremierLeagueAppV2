@@ -6,48 +6,48 @@ import { v4 as uuidv4 } from 'uuid';
 import accounts from './accounts.js';
 
 const dashboard = {
-  
- createView(request, response) {
-  logger.info('dashboard rendering');
+  createView(request, response) {
+    logger.info('dashboard rendering');
 
-  const loggedInUser = accounts.getCurrentUser(request);
+    const loggedInUser = accounts.getCurrentUser(request);
 
-  if (!loggedInUser || !loggedInUser.id) {
-    logger.warn("User not logged in or missing ID. Redirecting.");
-    return response.redirect('/');
-  }
+    if (!loggedInUser || !loggedInUser.id) {
+      logger.warn("User not logged in or missing ID. Redirecting.");
+      return response.redirect('/');
+    }
 
-  const allTeams = teamsCollection.getAllTeams();
-  const first20Teams = allTeams.slice(0, 20);
+    const allTeams = teamsCollection.getAllTeams();
+    const first20Teams = allTeams.slice(0, 20);
 
-  const userTeams = teamsCollection.getUserTeam(loggedInUser.id) || [];
+    const userTeams = teamsCollection.getUserTeam(loggedInUser.id) || [];
 
-  // Add only the user's own teams if they are NOT already in the first 20
-  const userTeamsNotInFirst20 = userTeams.filter(userTeam =>
-    !first20Teams.some(publicTeam => publicTeam.id === userTeam.id)
-  );
+    // Filter out user teams already in the first 20
+    const userTeamsNotInFirst20 = userTeams.filter(userTeam =>
+      !first20Teams.some(publicTeam => publicTeam.id === userTeam.id)
+    );
 
-  // Final list to render: first 20 global + user's teams (not duplicated)
-  const combinedTeams = [...first20Teams, ...userTeamsNotInFirst20];
+    // Combine and tag ownership
+    const combinedTeams = [...first20Teams, ...userTeamsNotInFirst20].map(team => ({
+      ...team,
+      isUserTeam: team.userid === loggedInUser.id
+    }));
 
-  const viewData = {
-    title: 'Teams Selection',
-    teams: combinedTeams,
-    fullname: `${loggedInUser.firstName} ${loggedInUser.lastName}`,
-    picture: loggedInUser.picture,
-  };
+    const viewData = {
+      title: 'Teams Selection',
+      teams: combinedTeams,
+      fullname: `${loggedInUser.firstName} ${loggedInUser.lastName}`,
+      picture: loggedInUser.picture,
+      currentUserId: loggedInUser.id
+    };
 
-  logger.info('Rendering dashboard with teams:', combinedTeams.map(t => t.name));
-  response.render('dashboard', viewData);
-}
-,
+    logger.info('Rendering dashboard with teams:', combinedTeams.map(t => t.name));
+    response.render('dashboard', viewData);
+  },
 
-  
-  addTeam(request, response) {
+  async addTeam(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
     const timestamp = new Date();
 
-    
     const newTeam = {
       id: uuidv4(),
       userid: loggedInUser.id,
@@ -55,22 +55,31 @@ const dashboard = {
       manager: request.body.manager,
       City: request.body.City,
       Stadium: request.body.Stadium,
-      players: request.body.players ? request.body.players.split(',').map(player => player.trim()) : [], // Convert players into an array
+      players: request.body.players
+        ? request.body.players.split(',').map(player => player.trim())
+        : [],
       date: timestamp,
-      picture: request.files.picture,  
+      picture: request.files.picture,
     };
 
-    
-    teamsCollection.addTeam(newTeam, function() {
+    teamsCollection.addTeam(newTeam, function () {
       response.redirect("/dashboard");
     });
   },
 
-  
-  deleteTeam(request, response) {
+  async deleteTeam(request, response) {
     const teamId = request.params.id;
-    logger.debug(`Deleting Team ${teamId}`);
-    teamsCollection.removeTeam(teamId);
+    const loggedInUser = accounts.getCurrentUser(request);
+
+    const team = teamsCollection.getInfo(teamId);
+
+    if (team && team.userid === loggedInUser.id) {
+      logger.debug(`User ${loggedInUser.id} deleting their own team ${teamId}`);
+      await teamsCollection.removeTeam(teamId);
+    } else {
+      logger.warn(`User ${loggedInUser?.id} attempted to delete team ${teamId} they do not own`);
+    }
+
     response.redirect("/dashboard");
   },
 };
