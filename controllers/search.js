@@ -29,7 +29,9 @@ const search = {
       const viewData = {
         title: "Team Search",  
         managers: getManagers(),  
-        foundTeams: []  
+        foundTeams: [] ,
+        picture: loggedInUser.picture,
+        fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
       };
 
       logger.debug('Managers: ' + viewData.managers);  
