@@ -1,35 +1,26 @@
 <form class="ui stacked segment form" action="/dashboard/addteam" method="POST" enctype="multipart/form-data">
-  <div class="two fields">
+  <div class="four fields">
     <div class="field">
       <label>Team Name</label>
-      <input placeholder="Name" type="text" name="name" required>
+      <input placeholder="Team Name" type="text" name="name" required>
     </div>
     <div class="field">
-      <label>Manager</label>
-      <input placeholder="Manager" type="text" name="manager" required>
+      <label>Manager Name</label>
+      <input placeholder="Manager Name" type="text" name="manager" required>
     </div>
-  </div>
-
-  <div class="two fields">
-    <div class="field">
-      <label>Team Image URL</label>
-      <input placeholder="Image" type="file" name="teampicture" required>
-    </div>
-    <div class="field">
-      <label>Manager Image URL</label>
-     <input placeholder="Image" type="file" name="managerpicture" required>
-    </div>
-  </div>
-
-  <div class="two fields">
     <div class="field">
       <label>City</label>
-      <input placeholder="e.g., London" type="text" name="City" required>
+      <input placeholder="City" type="text" name="City" required>
     </div>
     <div class="field">
       <label>Stadium</label>
-      <input placeholder="e.g., Stamford Bridge" type="text" name="Stadium" required>
+      <input placeholder="Stadium" type="text" name="Stadium" required>
     </div>
+  </div>
+
+  <div class="field">
+    <label>Team Image</label>
+    <input placeholder="Team Image" type="file" name="picture" accept="image/*" required>
   </div>
 
   <div class="field">
