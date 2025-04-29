@@ -175,6 +175,14 @@
       "email": "drice@gmail.com",
       "password": "handgel12",
       "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745955134/t2pdvzirofcpitkoykgm.webp"
+    },
+    {
+      "id": "22a31bff-56e3-42b6-a03d-d90dc2cf4cdb",
+      "firstName": "Stephen",
+      "lastName": "Kerry",
+      "email": "homer.simpson@gmail.com",
+      "password": "handgel12",
+      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745955521/xxggd9ndpo6acexnf7jr.png"
     }
   ]
 }

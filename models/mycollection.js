@@ -8,8 +8,12 @@ const teamsCollection = {
   collection: 'teams',
 array: 'players',
 
-  getUserTeam(userid) {
-  return this.store.findBy(this.collection, (team => team.userid === userid));
+ getUserTeam(userid) {
+  if (!userid) {
+    logger.warn("getUserTeam called with missing userid");
+    return [];
+  }
+  return this.store.findBy(this.collection, team => team.userid === userid);
 },
 
   getAllTeams() {

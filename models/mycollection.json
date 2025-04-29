@@ -10,7 +10,19 @@
       "players": [
         "Mohamed Salah"
       ]
-    },
+    }, 
+    
+     {
+      "id": 2,
+      "name": "Arsenal",
+      "picture": "https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/arsenal.webp?v=1740600158853",
+      "Stadium": "Emirates",
+      "manager": "Mikel Arteta",
+      "City": "London",
+      "players": [
+        "Bukayo Saka", "Declan Rice"
+      ]
+    }, 
     {
       "id": 3,
       "name": "Manchester City",
@@ -222,6 +234,19 @@
         "Matheus Chuna",
         "Joao Gomes"
       ]
+    },
+    {
+      "id": "d0630ef3-fa28-4cee-841e-aa7a4fcb2df2",
+      "userid": "41bc16f4-10c9-460d-a2b3-a36742b1abc0",
+      "name": "test team",
+      "manager": "Lyng",
+      "City": "Liverpool",
+      "Stadium": "Anfield",
+      "players": [
+        "salah"
+      ],
+      "date": "2025-04-29T11:57:04.242Z",
+      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745927824/zkvr1ywiwmkiisv8xr3c.jpg"
     }
   ]
 }

@@ -7,35 +7,40 @@ import accounts from './accounts.js';
 
 const dashboard = {
   
-  createView(request, response) {
-    logger.info('dashboard rendering');
+ createView(request, response) {
+  logger.info('dashboard rendering');
 
-    const loggedInUser = accounts.getCurrentUser(request);
+  const loggedInUser = accounts.getCurrentUser(request);
 
-    if (loggedInUser) {
-      const first20Teams = teamsCollection.getAllTeams().slice(0, 20);
-      const userTeams = teamsCollection.getUserTeam(loggedInUser.id);
+  if (!loggedInUser || !loggedInUser.id) {
+    logger.warn("User not logged in or missing ID. Redirecting.");
+    return response.redirect('/');
+  }
 
-      
-      const userTeamsNotInFirst20 = userTeams.filter(userTeam => {
-        return !first20Teams.some(publicTeam => publicTeam.id === userTeam.id);
-      });
+  const allTeams = teamsCollection.getAllTeams();
+  const first20Teams = allTeams.slice(0, 20);
 
-      const combinedTeams = [...first20Teams, ...userTeamsNotInFirst20];
+  const userTeams = teamsCollection.getUserTeam(loggedInUser.id) || [];
 
-      const viewData = {
-        title: 'Teams Selection',
-        teams: combinedTeams,
-        fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
-        picture: loggedInUser.picture,
-      };
+  // Add only the user's own teams if they are NOT already in the first 20
+  const userTeamsNotInFirst20 = userTeams.filter(userTeam =>
+    !first20Teams.some(publicTeam => publicTeam.id === userTeam.id)
+  );
 
-      logger.info('about to render dashboard with teams:', viewData.teams);
-      response.render('dashboard', viewData);
-    } else {
-      response.redirect('/');
-    }
-  },
+  // Final list to render: first 20 global + user's teams (not duplicated)
+  const combinedTeams = [...first20Teams, ...userTeamsNotInFirst20];
+
+  const viewData = {
+    title: 'Teams Selection',
+    teams: combinedTeams,
+    fullname: `${loggedInUser.firstName} ${loggedInUser.lastName}`,
+    picture: loggedInUser.picture,
+  };
+
+  logger.info('Rendering dashboard with teams:', combinedTeams.map(t => t.name));
+  response.render('dashboard', viewData);
+}
+,
 
   
   addTeam(request, response) {
