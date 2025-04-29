@@ -167,6 +167,14 @@
       "email": "nu@gmail.com",
       "password": "handgel12",
       "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745954479/ya878dquipfwrdgok7wh.webp"
+    },
+    {
+      "id": "dd1b9a57-25b9-4f3d-b2e1-47d72b585c5a",
+      "firstName": "declan",
+      "lastName": "rice",
+      "email": "drice@gmail.com",
+      "password": "handgel12",
+      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745955134/t2pdvzirofcpitkoykgm.webp"
     }
   ]
 }
