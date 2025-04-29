@@ -19,7 +19,7 @@
             <img src="{{picture}}" alt="Team Image">
           </div>
         {{/if}} 
-      
+        
         <div class="content">
           <a class="header">{{name}}</a>
 
@@ -31,11 +31,13 @@
         <div class="extra content">
           <a href="/team/{{id}}" class="ui icon button">
             <i class="fas fa-futbol"></i>
-          </a> 
-          
-          <a href="/dashboard/deleteteam/{{id}}" class="ui icon button">
-            <i class="ui trash black icon"></i>
           </a>
+
+          {{#if isUserTeam}}
+            <a href="/dashboard/deleteteam/{{id}}" class="ui icon button">
+              <i class="ui trash black icon"></i>
+            </a>
+          {{/if}}
         </div>
       </div>
     {{/each}}
