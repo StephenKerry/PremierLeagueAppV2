@@ -67,7 +67,7 @@ nav {
   background-color: white;
   border: 2px solid purple;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(128, 0, 128, 0.1); /* Soft purple shadow */
+  box-shadow: 0 2px 8px rgba(128, 0, 128, 0.1); 
   padding: 0.5em;
   margin-bottom: 2em;
 }
@@ -83,7 +83,7 @@ nav {
 }
 
 .menu-link:hover {
-  background-color: #e0d3f5 !important; /* light purple highlight on hover */
+  background-color: #e0d3f5 !important; 
   color: black !important;
 }
 
@@ -95,9 +95,9 @@ nav {
   text-transform:capitalize;
 }
 
-/* Style for Overall Statistics Title */
+
 .overall-statistics-title {
-  color: #006666; /* dark teal */
+  color: #006666; 
   font-family: 'Poppins', 'Helvetica Neue', helvetica, arial, sans-serif;
   font-weight: bold;
   font-size: 2em;

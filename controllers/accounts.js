@@ -138,7 +138,7 @@ const accounts = {
       userTeam.players = [];
       userTeam.manager = '';
       logger.info(`Resetting team data for user: ${user.email}`);
-      teamsCollection.addTeam(userTeam); // You might want to change this to updateTeam if needed
+      teamsCollection.addTeam(userTeam); 
     }
   }
 };

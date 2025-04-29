@@ -55,13 +55,13 @@ const dashboard = {
       picture: request.files.picture,  
     };
 
-    // Add the team to the database/collection
+    
     teamsCollection.addTeam(newTeam, function() {
       response.redirect("/dashboard");
     });
   },
 
-  // Deletes a team
+  
   deleteTeam(request, response) {
     const teamId = request.params.id;
     logger.debug(`Deleting Team ${teamId}`);

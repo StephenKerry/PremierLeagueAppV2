@@ -17,12 +17,12 @@ array: 'players',
   }, 
   
   getAllPlayers() {
-  const teams = this.getAllTeams(); // get all teams
+  const teams = this.getAllTeams();
   let allPlayers = [];
 
   for (const team of teams) {
     if (Array.isArray(team.players)) {
-      allPlayers = allPlayers.concat(team.players); // merge all players from each team
+      allPlayers = allPlayers.concat(team.players); 
     }
   }
 
@@ -51,7 +51,7 @@ array: 'players',
   const team = this.store.findOneBy(this.collection, (t) => t.id == teamId);
   if (team && Array.isArray(team.players) && playerIndex >= 0 && playerIndex < team.players.length) {
     team.players.splice(playerIndex, 1);
-    await this.store.db.write(); // ✅ Save to disk
+    await this.store.db.write(); // 
   }
 },
 

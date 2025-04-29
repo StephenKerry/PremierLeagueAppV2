@@ -20,7 +20,7 @@ const listinfo = {
   
   deletePlayer(request, response) {
   const teamId = request.params.id;
-  const playerIndex = parseInt(request.params.index, 10); // Parse index to ensure it's a number
+  const playerIndex = parseInt(request.params.index, 10); 
 
   logger.debug(`Deleting Player at index ${playerIndex} from Team ${teamId}`);
   
