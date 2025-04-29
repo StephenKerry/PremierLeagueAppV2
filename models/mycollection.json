@@ -369,6 +369,21 @@
       ],
       "date": "2025-04-29T07:37:47.541Z",
       "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745912267/gusaciqrbymibpah8wva.webp"
+    },
+    {
+      "id": "4b1de552-d62d-4f51-be91-b78ff9a17044",
+      "userid": "52a3b533-3490-4daf-928b-f9b63f6271c1",
+      "name": "Waterford Fc",
+      "manager": "tester",
+      "City": "japan",
+      "Stadium": "test stadium",
+      "players": [
+        "Steve Jobs",
+        "Bill Clinton",
+        "Thiery Henry"
+      ],
+      "date": "2025-04-29T07:49:50.160Z",
+      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745912990/nl0oybx8fnux8jb3nke0.webp"
     }
   ]
 }
