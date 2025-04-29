@@ -119,6 +119,14 @@
       "lastName": "Kerry",
       "email": "mvp@gmail.com",
       "password": "handgel12"
+    },
+    {
+      "id": "52a3b533-3490-4daf-928b-f9b63f6271c1",
+      "firstName": "last",
+      "lastName": "attempt",
+      "email": "la@gmail.com",
+      "password": "handgel12",
+      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745912682/elt13epefte5uee3dkmi.webp"
     }
   ]
 }

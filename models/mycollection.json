@@ -355,6 +355,20 @@
       ],
       "date": "2025-04-29T06:53:05.024Z",
       "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745909585/djhwmwoq9jqjmlpjw93a.jpg"
+    },
+    {
+      "id": "599a871a-6a06-47a1-a2d0-da986ffa1e1a",
+      "userid": "b3d6092d-4a93-4b5c-9423-6533890b6590",
+      "name": "New Team",
+      "manager": "tester",
+      "City": "Cork City",
+      "Stadium": "test stadium",
+      "players": [
+        "Mark Evans",
+        "Jude Sharp"
+      ],
+      "date": "2025-04-29T07:37:47.541Z",
+      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745912267/gusaciqrbymibpah8wva.webp"
     }
   ]
 }
