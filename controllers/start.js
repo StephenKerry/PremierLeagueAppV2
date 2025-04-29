@@ -15,7 +15,8 @@ const start = {
       const viewData = {
         title: "Welcome to the Premier League App!",
         fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
-        teams: teamsCollection.getAllTeams(), // Get all teams from the collection
+        teams: teamsCollection.getAllTeams(),
+        picture: loggedInUser.picture// Get all teams from the collection
       };
       response.render('start', viewData); // Render the start page with user and teams data
     } else {
