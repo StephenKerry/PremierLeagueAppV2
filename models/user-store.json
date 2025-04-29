@@ -159,6 +159,14 @@
       "email": "stephenkerry2013@gmail.com",
       "password": "handgel12",
       "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745953212/qriyjthacx1mi510ggdp.webp"
+    },
+    {
+      "id": "635001c4-f236-43d2-8e83-33c7997591bd",
+      "firstName": "new",
+      "lastName": "user",
+      "email": "nu@gmail.com",
+      "password": "handgel12",
+      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745954479/ya878dquipfwrdgok7wh.webp"
     }
   ]
 }
