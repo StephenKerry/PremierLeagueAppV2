@@ -342,6 +342,19 @@
       "name": "undefined's Team",
       "manager": "",
       "players": []
+    },
+    {
+      "id": "cdd0333d-b36a-4f2d-a226-5a73a6fa7a44",
+      "userid": "eaa85d42-f8fb-4ebf-a068-78fa79b1a5ff",
+      "name": "test",
+      "manager": "tester",
+      "City": "test city",
+      "Stadium": "testeing stadium",
+      "players": [
+        "guy 1 guy 2 guy 3"
+      ],
+      "date": "2025-04-29T06:53:05.024Z",
+      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745909585/djhwmwoq9jqjmlpjw93a.jpg"
     }
   ]
 }
