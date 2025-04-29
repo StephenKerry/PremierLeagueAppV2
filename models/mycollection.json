@@ -279,7 +279,6 @@
         "Jude Sharp"
       ]
     },
-    
     {
       "id": "e4151d11-af7a-46ca-8946-43ab086cbf68",
       "userid": "00b1bdd3-c9c9-4f34-b535-5f30ca8d9eba",
@@ -309,7 +308,6 @@
         "Thiery Henry"
       ]
     },
-    
     {
       "id": "cdd0333d-b36a-4f2d-a226-5a73a6fa7a44",
       "userid": "eaa85d42-f8fb-4ebf-a068-78fa79b1a5ff",
@@ -351,6 +349,20 @@
       ],
       "date": "2025-04-29T07:49:50.160Z",
       "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745912990/nl0oybx8fnux8jb3nke0.webp"
+    },
+    {
+      "id": "1d107548-bba7-4464-90de-36cb369401cc",
+      "userid": "6844734d-62cb-45e5-8182-d42083a124d1",
+      "name": "SAFC",
+      "manager": "RF",
+      "City": "HOUSE",
+      "Stadium": "BED",
+      "players": [
+        "RF",
+        "NOVA"
+      ],
+      "date": "2025-04-29T11:04:01.464Z",
+      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745924641/rjkkungxnm3gkman1ba2.avif"
     }
   ]
 }

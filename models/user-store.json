@@ -135,6 +135,14 @@
       "email": "aw@gmail.com",
       "password": "nba",
       "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745923974/fxlkgpkwjtynsvyc80qo.avif"
+    },
+    {
+      "id": "dc767d91-ad76-4f41-bd88-b3cb0fda1f6d",
+      "firstName": "ROBYN",
+      "lastName": "weeks",
+      "email": "Rw@gmail.com",
+      "password": "123",
+      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745925075/qji7wgyoftfgnk5ifkvb.avif"
     }
   ]
 }

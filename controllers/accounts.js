@@ -2,7 +2,7 @@
 
 import logger from '../utils/logger.js';
 import userStore from '../models/user-store.js';
-import teamssCollection from '../models/mycollection.js';
+import teamsCollection from '../models/mycollection.js';
 import { v4 as uuidv4 } from 'uuid';
 
 const accounts = {
@@ -11,6 +11,7 @@ const accounts = {
   index(request, response) {
     const allTeams = teamsCollection.getAllTeams();
     const allPlayers = teamsCollection.getAllPlayers();
+    const users = userStore.getAllUsers();
 
     let largestTeamSize = 0;
     let smallestTeamSize = Number.MAX_SAFE_INTEGER;
