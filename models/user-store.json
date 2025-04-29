@@ -151,6 +151,14 @@
       "email": "IA@gmail.com",
       "password": "ufc",
       "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745926546/qc0hcmgwqfk6ystyzdlo.webp"
+    },
+    {
+      "id": "5fbbed88-5567-4932-a39d-da9e4e0787c4",
+      "firstName": "Stephen",
+      "lastName": "Kerry",
+      "email": "stephenkerry2013@gmail.com",
+      "password": "handgel12",
+      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745953212/qriyjthacx1mi510ggdp.webp"
     }
   ]
 }

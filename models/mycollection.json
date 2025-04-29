@@ -224,20 +224,6 @@
       ]
     },
     {
-      "id": "7d093765-d37b-4a63-bcc0-521440c7e3ae",
-      "userid": "41bc16f4-10c9-460d-a2b3-a36742b1abc0",
-      "name": "ufcFC",
-      "manager": "Alex Pereiera",
-      "City": "Israel",
-      "Stadium": "South Africa",
-      "players": [
-        "RF",
-        "NOVA"
-      ],
-      "date": "2025-04-29T11:37:03.835Z",
-      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745926623/guvd33gg7pf6ian5issn.webp"
-    },
-    {
       "id": "d0630ef3-fa28-4cee-841e-aa7a4fcb2df2",
       "userid": "41bc16f4-10c9-460d-a2b3-a36742b1abc0",
       "name": "test team",
