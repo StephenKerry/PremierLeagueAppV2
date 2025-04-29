@@ -11,7 +11,7 @@ const about = {
 
     if (loggedInUser) {
 
-      const userTeams = teamsCollection.getUserTeams(loggedInUser.id);  
+      const userTeams = teamsCollection.getUserTeam(loggedInUser.id);  
 
       // Calculate statistics based on the user's playlists
       let numTeams = userTeams.length;

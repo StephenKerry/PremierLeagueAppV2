@@ -75,12 +75,12 @@ array: 'players',
   const team = this.store.findOneBy(this.collection, (team) => team.id == teamId);
 
   if (team) {
-    // ✅ Ensure players array exists
+
     if (!Array.isArray(team.players)) {
       team.players = [];
     }
 
-    // 🧹 Clean input and add it
+
     const cleanName = playerName.trim();
     if (cleanName.length > 0) {
       team.players.push(cleanName);
