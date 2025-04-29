@@ -2,7 +2,7 @@
 
 import logger from '../utils/logger.js';
 import userStore from '../models/user-store.js';
-import teamsCollection from '../models/mycollection.js';
+import teamssCollection from '../models/mycollection.js';
 import { v4 as uuidv4 } from 'uuid';
 
 const accounts = {
