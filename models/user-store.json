@@ -91,6 +91,13 @@
       "password": "handgel12",
       "profilepic": "HomerSimpson.webp",
       "id": "eaa85d42-f8fb-4ebf-a068-78fa79b1a5ff"
+    },
+    {
+      "firstName": "Stephen",
+      "lastName": "Kerry",
+      "email": "sktest@gmail.com",
+      "password": "handgel12",
+      "id": "32439ead-758b-4eee-a92e-9eff0576395c"
     }
   ]
 }
