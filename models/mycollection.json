@@ -229,38 +229,10 @@
       "Stadium": "Molineux Stadium",
       "manager": "Vítor Pereira",
       "City": "Wolverhampton",
-      "manager-image": "https://cdn.glitch.global/3bfe7c46-328a-4b93-9d50-6d1e027faf0e/vitor.jpg?v=1741459024964",
       "players": [
         "Matheus Chuna",
         "Joao Gomes"
       ]
-    },
-    {
-      "id": "d0630ef3-fa28-4cee-841e-aa7a4fcb2df2",
-      "userid": "41bc16f4-10c9-460d-a2b3-a36742b1abc0",
-      "name": "test team",
-      "manager": "Lyng",
-      "City": "Liverpool",
-      "Stadium": "Anfield",
-      "players": [
-        "salah"
-      ],
-      "date": "2025-04-29T11:57:04.242Z",
-      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745927824/zkvr1ywiwmkiisv8xr3c.jpg"
-    },
-    {
-      "id": "966cf00d-1348-4ab6-afdf-99fa73cc1ba3",
-      "userid": "cf495724-7606-44a4-85e1-7b6e61bef09c",
-      "name": "inazuma eleven",
-      "manager": "coach travis",
-      "City": "japan",
-      "Stadium": "raimon stadium",
-      "players": [
-        "Mark Evans",
-        "Jude Sharp"
-      ],
-      "date": "2025-04-29T19:46:46.176Z",
-      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745956006/pq1sllxvhhrnuvdtgrrv.png"
-    }
-  ]
+    }]
+    
 }
