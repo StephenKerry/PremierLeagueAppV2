@@ -1,13 +1,13 @@
 'use strict';
 
 import logger from "../utils/logger.js";
-import teamsCollection from "../models/mycollection.js";  // Ensure this is the correct model for teams
+import teamsCollection from "../models/mycollection.js";  
 import accounts from './accounts.js';
 
-// Get the list of managers
+
 const getManagers = () => {
   const managers = [];
-  const teams = teamsCollection.getAllTeams();  // Get all teams from the collection
+  const teams = teamsCollection.getAllTeams();  
 
   
   teams.forEach(team => {
@@ -16,7 +16,7 @@ const getManagers = () => {
     }
   });
 
-  return managers;  // Return the list of unique managers
+  return managers;  
 };
 
 const search = {
