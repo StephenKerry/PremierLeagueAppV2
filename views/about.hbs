@@ -68,19 +68,17 @@
       </div>
     </div>
 
-    <div class="ui divider"></div>
-
-    <h3 class="ui header">App Information</h3>
-    <div class="ui list">
-      <div class="item"><strong>App Title:</strong> {{info.appTitle}}</div>
-      <div class="item"><strong>Version:</strong> {{info.version}}</div>
-      <div class="item">
-        <strong>Created By:</strong>
-        {{#each info.creators}}
-          {{this.name}} - {{this.role}}
-        {{/each}}
-      </div>
-      <div class="item"><strong>Location:</strong> {{info.location}}</div>
-    </div>
+   <div class="ui divider"></div>
+  {{#with info}}
+<h3 class="ui header">App Information</h3>
+<div class="ui list">
+  <div class="item"><strong>App Title:</strong> {{info.appTitle}}</div>
+  <div class="item"><strong>Version:</strong> {{info.version}}</div>
+  <div class="item">
+    <strong>Created By:</strong>
+    {{info.creators.name}} - {{info.creators.role}}
+  </div>
+  <div class="item"><strong>Location:</strong> {{info.location}}</div>
+</div>
   </div>
 </section>
