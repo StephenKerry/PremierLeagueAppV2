@@ -2,16 +2,21 @@
 
 import logger from "../utils/logger.js"; 
 import teamsCollection from '../models/mycollection.js';
+import accounts from './accounts.js';
+
 
 const listinfo = {
   createView(request, response) {
     logger.info("Info page loading!"); 
     const teamsId = request.params.id;
     logger.debug('Teams id = ' + teamsId);
+     const loggedInUser = accounts.getCurrentUser(request);
     
     const viewData = {
       title: "Team Infomation Details" ,
        singleTeam: teamsCollection.getInfo(teamsId), 
+      fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
+      picture: loggedInUser.picture,
       
     };
     logger.info(viewData.singleTeam)
@@ -21,11 +26,8 @@ const listinfo = {
   deletePlayer(request, response) {
   const teamId = request.params.id;
   const playerIndex = parseInt(request.params.index, 10); 
-
   logger.debug(`Deleting Player at index ${playerIndex} from Team ${teamId}`);
-  
   teamsCollection.removePlayer(teamId, playerIndex);
-
   response.redirect('/team/' + teamId);
 },
 

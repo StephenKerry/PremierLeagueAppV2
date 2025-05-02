@@ -233,20 +233,6 @@
         "Matheus Chuna",
         "Joao Gomes"
       ]
-    },
-    {
-      "id": "02ec6b7f-6e7e-4ca6-86d3-3ca0da213484",
-      "userid": "c3821bbf-2f5a-4f19-ab84-5376f4da6987",
-      "name": "test",
-      "manager": "tester",
-      "City": "test city",
-      "Stadium": "test stadium",
-      "players": [
-        "Bill Clinton",
-        "Thiery Henry"
-      ],
-      "date": "2025-05-02T10:19:52.181Z",
-      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1746181192/sevspsy4iedqwpvxqngf.png"
     }
   ]
 }

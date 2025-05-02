@@ -11,7 +11,9 @@ array: 'players',
  getUserTeam(userid) {
   return this.store.findBy(this.collection, team => team.userid === userid);
 }, 
-  
+  getTeam(id) {
+    return this.store.findOneBy(this.collection, (team => team.id === id));
+},
 
   getAllTeams() {
     return this.store.findAll(this.collection);
@@ -59,7 +61,7 @@ array: 'players',
  
   
    removeTeam(id) {
-    const team = this.getUserTeam(id);
+    const team = this.getTeam(id);
     this.store.removeCollection(this.collection, team);
 },
  addPlayer(teamId, playerName) {
