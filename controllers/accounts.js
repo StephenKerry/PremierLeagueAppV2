@@ -7,14 +7,14 @@ import { v4 as uuidv4 } from 'uuid';
 
 const accounts = {
 
-  // Index page
+  
   index(request, response) {
     const allTeams = teamsCollection.getAllTeams();
     const allPlayers = teamsCollection.getAllPlayers();
     const users = userStore.getAllUsers();
 
     let largestTeamSize = 0;
-    let smallestTeamSize = Number.MAX_SAFE_INTEGER;
+    let smallestTeamSize = Number.MAX_SAFE_INTEGER;// here i assign this valuie to the largest integer value that can be represented in java, by doing this any vakue compared to it will likely be smaller and it will be replaced
     let largestTeams = [];
     let smallestTeams = [];
 
