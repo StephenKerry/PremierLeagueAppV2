@@ -56,7 +56,7 @@ const accounts = {
     response.render('index', viewData);
   },
 
-  // Login page
+  
   login(request, response) {
     const viewData = {
       title: 'Login to the Service',
@@ -112,7 +112,7 @@ const accounts = {
   },
 
 
-  // Authenticate login
+  
   authenticate(request, response) {
     const user = userStore.getUserByEmail(request.body.email);
     if (user && user.password === request.body.password) {
@@ -124,7 +124,7 @@ const accounts = {
     }
   },
 
-  // Get current logged-in user
+  
   getCurrentUser(request) {
     const userEmail = request.cookies.team;
     return userStore.getUserByEmail(userEmail);
