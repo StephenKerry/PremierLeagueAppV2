@@ -191,6 +191,14 @@
       "email": "jk@gmail.com",
       "password": "handgel12",
       "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1745956053/mvvwkk9oiqlkdu0eautd.png"
+    },
+    {
+      "id": "c3821bbf-2f5a-4f19-ab84-5376f4da6987",
+      "firstName": "Stephen",
+      "lastName": "Kerry",
+      "email": "skk@gmail.com",
+      "password": "handgel12",
+      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1746180048/xoz42kkbtzns0uvayc95.png"
     }
   ]
 }

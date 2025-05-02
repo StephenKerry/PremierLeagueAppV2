@@ -7,42 +7,32 @@ import accounts from './accounts.js';
 
 const dashboard = {
   createView(request, response) {
-    logger.info('dashboard rendering');
+  logger.info('Rendering dashboard');
 
-    const loggedInUser = accounts.getCurrentUser(request);
+  const loggedInUser = accounts.getCurrentUser(request);
+  if (loggedInUser) {
+   
 
-    if (!loggedInUser || !loggedInUser.id) {
-      logger.warn("User not logged in or missing ID. Redirecting.");
-      return response.redirect('/');
-    }
+  const publicTeams = teamsCollection.getAllTeams().slice(0, 20);
+  const userTeams = teamsCollection.getUserTeam(loggedInUser.id) || [];
 
-    const allTeams = teamsCollection.getAllTeams();
-    const first20Teams = allTeams.slice(0, 20);
+  const combinedTeams = [...publicTeams, ...userTeams].map(team => ({
+    ...team,
+    isUserTeam: team.userid === loggedInUser.id
+  }));
 
-    const userTeams = teamsCollection.getUserTeam(loggedInUser.id) || [];
+  const viewData = {
+    title: 'Teams Selection',
+     fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
+    picture: loggedInUser.picture,
+    currentUserId: loggedInUser.id,
+    teams: combinedTeams
+  };
 
-    // Filter out user teams already in the first 20
-    const userTeamsNotInFirst20 = userTeams.filter(userTeam =>
-      !first20Teams.some(publicTeam => publicTeam.id === userTeam.id)
-    );
+  logger.info(`Loaded ${combinedTeams.length} teams for dashboard`);
+  response.render('dashboard', viewData);
+}},
 
-    // Combine and tag ownership
-    const combinedTeams = [...first20Teams, ...userTeamsNotInFirst20].map(team => ({
-      ...team,
-      isUserTeam: team.userid === loggedInUser.id
-    }));
-
-    const viewData = {
-      title: 'Teams Selection',
-      teams: combinedTeams,
-      fullname: `${loggedInUser.firstName} ${loggedInUser.lastName}`,
-      picture: loggedInUser.picture,
-      currentUserId: loggedInUser.id
-    };
-
-    logger.info('Rendering dashboard with teams:', combinedTeams.map(t => t.name));
-    response.render('dashboard', viewData);
-  },
 
   async addTeam(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
@@ -57,7 +47,7 @@ const dashboard = {
       Stadium: request.body.Stadium,
       players: request.body.players
         ? request.body.players.split(',').map(player => player.trim())
-        : [],
+        : [],// the split() takes the seperated comma string input and splits it into an array seperated by the commas, the trim removes the whitespace
       date: timestamp,
       picture: request.files.picture,
     };
