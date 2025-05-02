@@ -57,21 +57,13 @@ const dashboard = {
     });
   },
 
-  async deleteTeam(request, response) {
+  deleteTeam(request, response) {
     const teamId = request.params.id;
-    const loggedInUser = accounts.getCurrentUser(request);
-
-    const team = teamsCollection.getInfo(teamId);
-
-    if (team && team.userid === loggedInUser.id) {
-      logger.debug(`User ${loggedInUser.id} deleting their own team ${teamId}`);
-      await teamsCollection.removeTeam(teamId);
-    } else {
-      logger.warn(`User ${loggedInUser?.id} attempted to delete team ${teamId} they do not own`);
-    }
-
+    logger.debug(`Deleting Team ${teamId}`);
+    teamsCollection.removeTeam(teamId);
     response.redirect("/dashboard");
-  },
+},
+   
 };
 
 export default dashboard;

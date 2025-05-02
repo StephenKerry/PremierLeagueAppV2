@@ -9,12 +9,9 @@ const teamsCollection = {
 array: 'players',
 
  getUserTeam(userid) {
-  if (!userid) {
-    logger.warn("getUserTeam called with missing userid");
-    return [];
-  }
   return this.store.findBy(this.collection, team => team.userid === userid);
-},
+}, 
+  
 
   getAllTeams() {
     return this.store.findAll(this.collection);
@@ -59,22 +56,12 @@ array: 'players',
   }
 },
 
-  async removeTeam(id) {
-  const team = this.store.findOneBy(this.collection, (team) => team.id == id); // Get the team by id
+ 
   
-  if (team) {
-    // If the team is found, remove it from the collection
-    const index = this.store.db.data[this.collection].indexOf(team);
-    if (index !== -1) {
-      this.store.db.data[this.collection].splice(index, 1); // Remove the team from the array
-      await this.store.db.write(); // Wait for the write operation to complete
-      logger.info(`Team with id ${id} removed successfully.`);
-    }
-  } else {
-    logger.error(`Team with id ${id} not found.`);
-  }
-}
-,
+   removeTeam(id) {
+    const team = this.getUserTeam(id);
+    this.store.removeCollection(this.collection, team);
+},
  addPlayer(teamId, playerName) {
   const team = this.store.findOneBy(this.collection, (team) => team.id == teamId);
 
