@@ -68,12 +68,6 @@ array: 'players',
   const team = this.store.findOneBy(this.collection, (team) => team.id == teamId);
 
   if (team) {
-
-    if (!Array.isArray(team.players)) {
-      team.players = [];
-    }
-
-
     const cleanName = playerName.trim();
     if (cleanName.length > 0) {
       team.players.push(cleanName);
@@ -99,7 +93,7 @@ array: 'players',
     return this.store.findOneBy(this.collection, (teams => teams.id == id));
   }, 
   
-// In your teamsCollection model
+
 getTeamManager(managerName) {
   const teams = this.getAllTeams();
   return teams.filter(team => team.manager === managerName);  // Filter teams by manager

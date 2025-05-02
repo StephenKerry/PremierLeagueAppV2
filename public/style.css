@@ -51,12 +51,7 @@ nav {
   background-color: darkviolet; 
 } 
 
-.manager-image {
-  width: 1200px;
-  height: 450px;
-  object-fit: cover;
-  border-radius: 10px; /* Optional: adds rounded corners */
-}
+
 
 .editSubmit {
   border: none;

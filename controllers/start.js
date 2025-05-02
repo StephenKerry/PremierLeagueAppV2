@@ -7,20 +7,20 @@ import accounts from './accounts.js';
 
 const start = {
   createView(request, response) {
-    const loggedInUser = accounts.getCurrentUser(request); // Check if user is logged in
+    const loggedInUser = accounts.getCurrentUser(request); 
     logger.info("Start page loading!");
 
     if (loggedInUser) {
-      // User is logged in, prepare the viewData with user info and teams info
+      
       const viewData = {
         title: "Welcome to the Premier League App!",
         fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
         teams: teamsCollection.getAllTeams(),
-        picture: loggedInUser.picture// Get all teams from the collection
+        picture: loggedInUser.picture
       };
-      response.render('start', viewData); // Render the start page with user and teams data
+      response.render('start', viewData); 
     } else {
-      // If no user is logged in, redirect to the home page or login page
+      
       response.redirect('/');
     }
   },
