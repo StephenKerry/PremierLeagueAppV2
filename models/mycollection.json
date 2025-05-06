@@ -233,6 +233,21 @@
         "Matheus Chuna",
         "Joao Gomes"
       ]
+    },
+    {
+      "id": "888c9358-34e2-44e7-a8af-b5c74bc8f50e",
+      "userid": "06d5847e-a6d7-4424-b4cc-a99fdcd78730",
+      "name": "Waterford",
+      "manager": "Myers",
+      "City": "Waterford",
+      "Stadium": "RSC",
+      "players": [
+        "Riley",
+        "Jones",
+        "Lyng"
+      ],
+      "date": "2025-05-06T10:06:45.244Z",
+      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1746526005/v9px4imvdnjgeu1k3np8.jpg"
     }
   ]
 }

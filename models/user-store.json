@@ -199,6 +199,14 @@
       "email": "skk@gmail.com",
       "password": "handgel12",
       "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1746180048/xoz42kkbtzns0uvayc95.png"
+    },
+    {
+      "id": "06d5847e-a6d7-4424-b4cc-a99fdcd78730",
+      "firstName": "Mary",
+      "lastName": "Lyng",
+      "email": "mary.lyng@setu.ie",
+      "password": "Trustno1",
+      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1746525947/ohndsdzv558gpusgp0md.jpg"
     }
   ]
 }
