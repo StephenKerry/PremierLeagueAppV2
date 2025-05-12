@@ -238,7 +238,7 @@
       "id": "888c9358-34e2-44e7-a8af-b5c74bc8f50e",
       "userid": "06d5847e-a6d7-4424-b4cc-a99fdcd78730",
       "name": "Waterford",
-      "manager": "Myers",
+      "manager": "",
       "City": "Waterford",
       "Stadium": "RSC",
       "players": [
@@ -248,6 +248,21 @@
       ],
       "date": "2025-05-06T10:06:45.244Z",
       "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1746526005/v9px4imvdnjgeu1k3np8.jpg"
+    },
+    {
+      "id": "f068212a-febf-4577-86ff-0aa718fdd2a3",
+      "userid": "06d5847e-a6d7-4424-b4cc-a99fdcd78730",
+      "name": "Kilkenny",
+      "manager": "Lyng",
+      "City": "Kilkenny",
+      "Stadium": "Nowlan Park",
+      "players": [
+        "Reid",
+        "Mullan",
+        "Cody"
+      ],
+      "date": "2025-05-12T15:28:02.155Z",
+      "picture": "http://res.cloudinary.com/sk-web-dev/image/upload/v1747063682/pfu4flbhrnomkv3xhhru.jpg"
     }
   ]
 }
